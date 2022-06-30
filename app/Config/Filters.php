@@ -74,6 +74,9 @@ class Filters extends BaseConfig
         'isLoggedIn' => ['before' =>
             [
                 'home',
+            ],'after' =>
+            [
+                'login','register'
             ]
         ]
     ];
