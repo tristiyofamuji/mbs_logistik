@@ -6,6 +6,12 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('home');
+        $data = [
+            'title' => 'Home'
+        ];
+        return view('layout/header', $data)
+              . view('layout/menu', $data)
+              . view('home')
+              . view('layout/footer');
     }
 }
