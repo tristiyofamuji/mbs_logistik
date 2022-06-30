@@ -25,7 +25,7 @@
 			
 			<!-- BEGIN brand -->
 			<div class="brand">
-				<a href="index.html" class="brand-logo">
+				<a href="<?= base_url('home') ?>" class="brand-logo">
 					<span class="brand-img">
 						<span class="brand-img-text text-theme">LT</span>
 					</span>
@@ -211,7 +211,7 @@
 				<div class="menu">
 					<div class="menu-header">Navigation</div>
 					<div class="menu-item">
-						<a href="index.html" class="menu-link">
+						<a href="<?= base_url('home') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-home"></i></span>
 							<span class="menu-text">Home</span>
 						</a>
