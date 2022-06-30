@@ -8,8 +8,8 @@
 	<meta name="author" content="" />
 	
 	<!-- ================== BEGIN core-css ================== -->
-	<link href="<?= base_url() ?>/sistem/assets/css/vendor.min.css" rel="stylesheet" />
-	<link href="<?= base_url() ?>/sistem/assets/css/app.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/css/app.min.css" rel="stylesheet" />
 	<!-- ================== END core-css ================== -->
 	
 </head>
@@ -25,7 +25,11 @@
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <?php echo session()->getFlashdata('error'); ?>
                     </div>
-                    <?php endif; ?>
+                    <?php elseif(!empty(session()->getFlashdata('success'))) : ?>
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<?php echo session()->getFlashdata('success'); ?>
+					</div>
+					<?php endif; ?>
 					<h1 class="text-center">Logistik & Trucking</h1><hr>
 					<div class="mb-3">
 						<label class="form-label">Email Address <span class="text-danger">*</span></label>
@@ -40,7 +44,7 @@
 					</div>
 					<div class="mb-3">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="customCheck1" />
+							<input class="form-check-input" name="remember" type="checkbox" value="" id="customCheck1" />
 							<label class="form-check-label" for="customCheck1">Remember me</label>
 						</div>
 					</div>
@@ -61,8 +65,8 @@
 	<!-- END #app -->
 	
 	<!-- ================== BEGIN core-js ================== -->
-	<script src="<?= base_url() ?>/sistem/assets/js/vendor.min.js"></script>
-	<script src="<?= base_url() ?>/sistem/assets/js/app.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/vendor.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
 	
     <script>
@@ -72,6 +76,13 @@
                 $(this).remove(); 
             }); 
         }, 2000);
+		
+        window.setTimeout(function() { 
+            $(".alert-success").fadeTo(500, 0).slideUp(500,
+            function(){ 
+                $(this).remove(); 
+            }); 
+        }, 5000);
     </script>
 </body>
 </html>

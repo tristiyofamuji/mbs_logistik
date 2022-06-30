@@ -8,8 +8,8 @@
 	<meta name="author" content="" />
 	
 	<!-- ================== BEGIN core-css ================== -->
-	<link href="<?= base_url() ?>/sistem/assets/css/vendor.min.css" rel="stylesheet" />
-	<link href="<?= base_url() ?>/sistem/assets/css/app.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/css/app.min.css" rel="stylesheet" />
 	<!-- ================== END core-css ================== -->
 	<style>
         ul{
@@ -72,8 +72,8 @@
 	<!-- END #app -->
 	
 	<!-- ================== BEGIN core-js ================== -->
-	<script src="<?= base_url() ?>/sistem/assets/js/vendor.min.js"></script>
-	<script src="<?= base_url() ?>/sistem/assets/js/app.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/vendor.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
 	
     <!-- <script>

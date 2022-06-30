@@ -59,6 +59,7 @@ class Register extends BaseController
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
             'name' => $this->request->getVar('name')
         ]);
+        session()->setFlashdata('success', 'Proses registrasi berhasil, silahkan Log In dengan data akun anda.');
         return redirect()->to('/login');
     }
 }
