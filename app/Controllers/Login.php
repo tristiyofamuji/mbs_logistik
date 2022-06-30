@@ -22,9 +22,10 @@ class Login extends BaseController
         if ($dataUser) {
             if (password_verify($password, $dataUser->password)) {
                 session()->set([
-                    'username' => $dataUser->username,
-                    'name' => $dataUser->name,
-                    'logged_in' => TRUE
+                    'LT@id' => $dataUser->id,
+                    'LT@username' => $dataUser->username,
+                    'LT@name' => $dataUser->name,
+                    'LT@logged_in' => TRUE
                 ]);
                 return redirect()->to(base_url('home'));
             } else {

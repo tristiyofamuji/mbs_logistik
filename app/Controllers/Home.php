@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+//namespace \Config\Services::session($config);
 
 class Home extends BaseController
 {
