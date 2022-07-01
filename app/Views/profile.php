@@ -1,6 +1,22 @@
 
 		<!-- BEGIN #content -->
 		<div id="content" class="app-content">
+			<div class="d-flex align-items-center mb-md-3 mb-2">
+				<div class="flex-fill">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Logistik & Trucking</a></li>
+						<li class="breadcrumb-item active"><?= $title ?></li>
+					</ul>
+			
+					<h1 class="page-header mb-0">
+						<?= $title ?>
+					</h1>
+				</div>
+				<div class="ms-auto">
+					<a href="#modalAddTask" data-bs-toggle="modal" class="btn btn-outline-theme"><i class="fa fa-plus-circle me-1"></i> Add Task</a>
+				</div>
+			</div>
+            
 			<div class="card">
 				<div class="card-body p-0">
 					<!-- BEGIN profile -->

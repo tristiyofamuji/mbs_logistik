@@ -7,7 +7,7 @@ class Profile extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Home'
+            'title' => 'Profile'
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
