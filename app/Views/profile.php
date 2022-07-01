@@ -65,7 +65,7 @@
                                                         </div>
                                                         <div class="list-group-item d-flex align-items-center p-3">
                                                             <div>
-                                                                <a href="#modalEdit" data-bs-toggle="modal" class="btn btn-warning w-100px">Edit</a>
+                                                                <a href="#modalEditAkun" data-bs-toggle="modal" class="btn btn-warning w-100px">Edit</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -100,40 +100,36 @@
 		<!-- END #content -->
         
 		<!-- BEGIN #modalEdit -->
-		<div class="modal fade" id="modalEdit">
+		<div class="modal fade" id="modalEditAkun">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Edit name</h5>
+						<h5 class="modal-title">Edit Data Akun</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 					</div>
 					<div class="modal-body">
 						<div class="mb-3">
-							<label class="form-label">Name</label>
-							<div class="row row-space-10">
-								<div class="col-4">
-									<input class="form-control" placeholder="First" value="Sean" />
-								</div>
-								<div class="col-4">
-									<input class="form-control" placeholder="Middle" value="" />
-								</div>
-								<div class="col-4">
-									<input class="form-control" placeholder="Last" value="Ngu" />
-								</div>
-							</div>
+							<label class="form-label">Nama Lengkap</label>
+							<input type="text" class="form-control" name="name" placeholder="Nama Lengkap" value="" />
 						</div>
-						<div class="alert alert-muted">
+						<div class="mb-3">
+							<label class="form-label">Username</label>
+							<input type="email" class="form-control" name="username" placeholder="Username" value="" />
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Password</label>
+							<input type="password" class="form-control" name="password" placeholder="Password"/>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">No. telepon</label>
+							<input type="text" class="form-control" name="telephone" placeholder="No. telepon"/>
+						</div>
+						<!-- <div class="alert alert-muted">
 							<b>Please note:</b> 
 							If you change your name, you can't change it again for 60 days. 
 							Don't add any unusual capitalization, punctuation, characters or random words. 
 							<a href="#" class="alert-link">Learn more.</a>
-						</div>
-						<div class="mb-3">
-							<label class="form-label">Other Names</label>
-							<div>
-								<a href="#" class="btn btn-outline-default"><i class="fa fa-plus fa-fw"></i> Add other names</a>
-							</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-outline-default" data-bs-dismiss="modal">Close</button>
