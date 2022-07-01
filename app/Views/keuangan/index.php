@@ -3,10 +3,10 @@
 			<div class="d-flex align-items-center mb-3">
 				<div>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">PAGES</a></li>
-						<li class="breadcrumb-item active">ORDERS</li>
+						<li class="breadcrumb-item"><a href="#">Logistik & Trucking</a></li>
+						<li class="breadcrumb-item active"><?= $title ?></li>
 					</ul>
-					<h1 class="page-header mb-0">Invoice</h1>
+					<h1 class="page-header mb-0"><?= $title ?></h1>
 				</div>
 				
 				<div class="ms-auto">
@@ -70,7 +70,7 @@
 						
 						<!-- BEGIN table -->
 						<div class="table-responsive">
-							<table class="table table-hover text-nowrap">
+							<table id="datatableDefault" class="table text-nowrap w-100" data-toggle="table" data-search="true">
 								<thead>
 									<tr>
 										<th class="border-top-0 pt-0 pb-2"></th>
@@ -93,8 +93,6 @@
 										<td class="align-middle"><a href="#">#1950</a></td>
 										<td class="align-middle"></td>
 										<td class="align-middle"></td>
-										<td></td>
-										<td class="py-1 align-middle"></td>
 										<td class="align-middle"></td>
 										<td class="align-middle"></td>
 										<td class="align-middle"></td>
@@ -104,38 +102,23 @@
 						</div>
 						<!-- END table -->
 						<div class="modal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal_title"></h4>
-						</div>
-						<div id="modal_content" class="modal-body"></div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-outline-theme">Save changes</button>
-						</div>
-					</div>
-				</div>
-			</div>
-						
-						<div class="d-md-flex align-items-center">
-							<div class="me-md-auto text-md-left text-center mb-2 mb-md-0">
-								Showing 1 to 10 of 57 entries
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal_title"></h4>
+									</div>
+									<div id="modal_content" class="modal-body"></div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-outline-theme">Save changes</button>
+									</div>
+								</div>
 							</div>
-							<ul class="pagination mb-0 justify-content-center">
-								<li class="page-item disabled"><a class="page-link">Previous</a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item active"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#">5</a></li>
-								<li class="page-item"><a class="page-link" href="#">6</a></li>
-								<li class="page-item"><a class="page-link" href="#">Next</a></li>
-							</ul>
 						</div>
+						
 					</div>
 				</div>
 				<div class="card-arrow">
