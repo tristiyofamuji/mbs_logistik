@@ -210,13 +210,13 @@
 				<!-- BEGIN menu -->
 				<div class="menu">
 					<div class="menu-header">Navigation</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Home'){ echo 'active'; } ?>">
 						<a href="<?= base_url('home') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-home"></i></span>
 							<span class="menu-text">Home</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Keuangan'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/keuangan') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-bar-chart"></i></span>
 							<span class="menu-text">Pencatatan Keuangan</span>

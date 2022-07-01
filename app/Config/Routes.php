@@ -35,7 +35,14 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
+$routes->get('/', function () {
+    if(session('LT@logged_in') != TRUE){
+	    throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+    }else{
+        return redirect()->to('/home');
+    }
+});
 $routes->get('/home', 'Home::index');
 $routes->get('/pages', 'Pages::index');
 $routes->get('/login', 'Login::index');
