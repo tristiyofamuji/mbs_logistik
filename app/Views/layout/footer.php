@@ -9,4 +9,11 @@
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="<?= base_url() ?>/assets/js/vendor.min.js"></script>
 	<script src="<?= base_url() ?>/assets/js/app.min.js"></script>
+
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="<?= base_url() ?>/assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="<?= base_url() ?>/assets/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/demo/dashboard.demo.js"></script>
+	<!-- ================== END page-js ================== -->
+
 </html>
