@@ -52,6 +52,7 @@ $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
 $routes->get('/keuangan', 'Keuangan::index');
 $routes->get('/profile', 'Profile::index');
+$routes->get('/bagihasilsopir', 'Bagihasil::index');
 
 /*
  * --------------------------------------------------------------------

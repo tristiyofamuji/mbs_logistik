@@ -223,55 +223,55 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/bagihasilsopir') ?>" class="menu-link">
+						<a href="<?= base_url('/bagihasilsopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-truck"></i></span>
 							<span class="menu-text">Bagi Hasil Sopir</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/gajisopir') ?>" class="menu-link">
+						<a href="<?= base_url('/gajisopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-credit-card"></i></span>
 							<span class="menu-text">Perhitungan Gaji Sopir</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/lacakposisi') ?>" class="menu-link">
+						<a href="<?= base_url('/lacakposisi') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-map-marker-alt"></i></span>
 							<span class="menu-text">Melacak posisi truck</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/mainetenance') ?>" class="menu-link">
+						<a href="<?= base_url('/mainetenance') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-wrench"></i></span>
 							<span class="menu-text">Maintenance Truck</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/pembelianmaintenance') ?>" class="menu-link">
+						<a href="<?= base_url('/pembelianmaintenance') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-money-bill-alt"></i></span>
 							<span class="menu-text">Pembelian Maintenance Truck</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/perbaikan') ?>" class="menu-link">
+						<a href="<?= base_url('/perbaikan') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-bug"></i></span>
 							<span class="menu-text">Perbaikan Di Lokasi Terpencil</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/jualbelitruck') ?>" class="menu-link">
+						<a href="<?= base_url('/jualbelitruck') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-handshake"></i></span>
 							<span class="menu-text">Jual Beli Truck</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/pajakdansim') ?>" class="menu-link">
+						<a href="<?= base_url('/pajakdansim') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-tasks"></i></span>
 							<span class="menu-text">Pajak Dan SIM Mati</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/order') ?>" class="menu-link">
+						<a href="<?= base_url('/order') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-searchengin"></i></span>
 							<span class="menu-text">Mencari Order</span>
 						</a>
@@ -279,13 +279,13 @@
 					<div class="menu-divider"></div>
 					<div class="menu-header">Users</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/setting') ?>" class="menu-link">
+						<a href="<?= base_url('/setting') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gear"></i></span>
 							<span class="menu-text">Settings</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/helper') ?>" class="menu-link">
+						<a href="<?= base_url('/helper') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gem"></i></span>
 							<span class="menu-text">Helper</span>
 						</a>
@@ -293,7 +293,7 @@
 				</div>
 				<!-- END menu -->
 				<div class="p-3 px-4 mt-auto">
-					<a href="<?= base_url('/pages/documentation') ?>" class="btn d-block btn-outline-theme">
+					<a href="<?= base_url('/documentation') ?>" class="btn d-block btn-outline-theme">
 						<i class="fa fa-code-branch me-2 ms-n2 opacity-5"></i> Documentation
 					</a>
 				</div>
