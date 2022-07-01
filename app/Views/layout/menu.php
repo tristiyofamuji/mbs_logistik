@@ -217,7 +217,7 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a href="<?= base_url('/pages/keuangan') ?>" class="menu-link">
+						<a href="<?= base_url('/keuangan') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-bar-chart"></i></span>
 							<span class="menu-text">Pencatatan Keuangan</span>
 						</a>

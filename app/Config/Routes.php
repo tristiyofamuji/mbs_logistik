@@ -43,6 +43,7 @@ $routes->post('/login/auth', 'Login::auth');
 $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
+$routes->get('/keuangan', 'Keuangan::index');
 
 /*
  * --------------------------------------------------------------------
