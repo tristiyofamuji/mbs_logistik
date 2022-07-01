@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Profile extends BaseController
 {
     public function index()
     {
@@ -11,7 +11,7 @@ class Home extends BaseController
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
-              . view('home')
+              . view('profile')
               . view('layout/footer');
     }
 }

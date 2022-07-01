@@ -43,7 +43,11 @@ $routes->post('/login/auth', 'Login::auth');
 $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
+<<<<<<< HEAD
 $routes->get('/keuangan', 'Keuangan::index');
+=======
+$routes->get('/profile', 'Profile::index');
+>>>>>>> 6412fa03a0bfbdb2dc736d381acc0e07f05de8a0
 
 /*
  * --------------------------------------------------------------------
