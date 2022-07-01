@@ -73,7 +73,7 @@ class Filters extends BaseConfig
     public $filters = [
         'isLoggedIn' => ['before' =>
             [
-                'home',
+                'home','profile'
             ],'after' =>
             [
                 'login','register'
