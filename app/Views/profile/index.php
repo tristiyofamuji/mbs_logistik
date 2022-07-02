@@ -13,7 +13,17 @@
 					</h1>
 				</div>
 			</div>
-            
+            <?php if (!empty(session()->getFlashdata('error'))) : ?>
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<?php echo session()->getFlashdata('error'); ?>
+				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			</div>
+			<?php elseif(!empty(session()->getFlashdata('success'))) : ?>
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<?php echo session()->getFlashdata('success'); ?>
+				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			</div>
+			<?php endif; ?>
 			<div class="card">
 				<div class="card-body p-0">
 					<!-- BEGIN profile -->
@@ -115,7 +125,7 @@
 		<!-- BEGIN #modalEdit -->
 		<div class="modal fade" id="modalEditAkun">
 			<div class="modal-dialog">
-				<form action="<?= base_url('profile/edit') ?>" method="post">
+				<form action="<?= base_url('profile/editData') ?>" method="post">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title">Edit Data Akun</h5>
@@ -141,7 +151,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-outline-default" data-bs-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-outline-theme">Save changes</button>
+							<button class="btn btn-outline-theme">Save changes</button>
 						</div>
 					</div>
 				</form>
