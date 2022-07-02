@@ -46,10 +46,9 @@
 									<tr>
 										<th class="border-top-0 pt-0 pb-2"></th>
 										<th class="border-top-0 pt-0 pb-2">ID Sopir</th>
+										<th class="border-top-0 pt-0 pb-2">Nama Sopir</th>
+										<th class="border-top-0 pt-0 pb-2">Wilayah</th>
 										<th class="border-top-0 pt-0 pb-2">Pemasukan</th>
-										<th class="border-top-0 pt-0 pb-2">Pengeluaran</th>
-										<th class="border-top-0 pt-0 pb-2">Tanggal Masuk</th>
-										<th class="border-top-0 pt-0 pb-2">Tanggal Keluar</th>
 										<th class="border-top-0 pt-0 pb-2">Keterangan</th>
 									</tr>
 								</thead>
@@ -62,7 +61,6 @@
 											</div>
 										</td>
 										<td class="align-middle"><a href="#">#1950</a></td>
-										<td class="align-middle"></td>
 										<td class="align-middle"></td>
 										<td class="align-middle"></td>
 										<td class="align-middle"></td>
