@@ -38,7 +38,8 @@ $routes->set404Override();
 // $routes->get('/', 'Home::index');
 $routes->get('/', function () {
     if(session('LT@logged_in') != TRUE){
-	    throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    // throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        return redirect()->to('/login');
     }else{
         return redirect()->to('/home');
     }
