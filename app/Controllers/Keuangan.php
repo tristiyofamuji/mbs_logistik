@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Controllers;
-//namespace \Config\Services::session($config);
+use App\Models\UsersModel;
 
 class Keuangan extends BaseController
 {
     public function index()
     {
+        $users =  new UsersModel();
         $data = [
-            'title' => 'Keuangan'
+            'title' => 'Keuangan',
+            'user' => $users->first()
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)

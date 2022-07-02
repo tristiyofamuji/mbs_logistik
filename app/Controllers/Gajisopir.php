@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\UsersModel;
 
 class Gajisopir extends BaseController
 {
     public function index()
     {
+        $users =  new UsersModel();
         $data = [
-            'title' => 'Gaji Sopir'
+            'title' => 'Gaji Sopir',
+            'user' => $users->first()
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)

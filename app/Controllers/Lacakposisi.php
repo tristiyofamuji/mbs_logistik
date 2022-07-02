@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Controllers;
-//namespace \Config\Services::session($config);
+use App\Models\UsersModel;
 
 class Lacakposisi extends BaseController
 {
     public function index()
     {
+        $users =  new UsersModel();
         $data = [
-            'title' => 'Lacak Posisi Truck'
+            'title' => 'Lacak Posisi Truck',
+            'user' => $users->first()
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
