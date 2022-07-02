@@ -34,7 +34,7 @@
 		lengthMenu: [ 10, 20, 30, 40, 50 ],
 		responsive: true,
         ordering: true,
-		searching: false,
+		searching: true,
 		buttons: [ 
 		/* { extend: 'print', className: 'btn btn-default' },
 		{ extend: 'csv', className: 'btn btn-default' } */

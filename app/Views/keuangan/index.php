@@ -43,10 +43,10 @@
 						<div class="input-group mb-4">
 							<div class="flex-fill position-relative">
 								<div class="input-group">
-									<input type="text" class="form-control px-35px" placeholder="Filter orders" />
+									<!-- <input type="text" class="form-control px-35px" placeholder="Filter orders" />
 									<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0 start-0" style="z-index: 1020;">
 										<i class="fa fa-search opacity-5"></i>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<button class="btn btn-outline-default dropdown-toggle rounded-0" type="button" data-bs-toggle="dropdown"><span class="d-none d-md-inline">Payment Status</span><span class="d-inline d-md-none"><i class="fa fa-credit-card"></i></span> &nbsp;</button>
