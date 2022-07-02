@@ -55,6 +55,7 @@ $routes->get('/keuangan', 'Keuangan::index');
 $routes->get('/profile', 'Profile::index');
 $routes->get('/bagihasilsopir', 'Bagihasil::index');
 $routes->get('/gajisopir', 'Gajisopir::index');
+$routes->get('/lacakposisi', 'Lacakposisi::index');
 
 /*
  * --------------------------------------------------------------------

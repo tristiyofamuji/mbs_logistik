@@ -222,19 +222,19 @@
 							<span class="menu-text">Pencatatan Keuangan</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Bagi Hasil Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/bagihasilsopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-truck"></i></span>
 							<span class="menu-text">Bagi Hasil Sopir</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Gaji Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/gajisopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-credit-card"></i></span>
-							<span class="menu-text">Perhitungan Gaji Sopir</span>
+							<span class="menu-text">Gaji Sopir</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Lacak Posisi Truck'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/lacakposisi') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-map-marker-alt"></i></span>
 							<span class="menu-text">Melacak posisi truck</span>
