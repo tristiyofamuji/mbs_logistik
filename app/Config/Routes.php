@@ -44,14 +44,14 @@ $routes->get('/', function () {
         return redirect()->to('/home');
     }
 });
-$routes->get('/home', 'Home::index');
-$routes->get('/pages', 'Pages::index');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/auth', 'Login::auth');
 $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
+$routes->get('/home', 'Home::index');
 $routes->get('/keuangan', 'Keuangan::index');
+$routes->get('/order', 'Order::index');
 $routes->get('/profile', 'Profile::index');
 $routes->post('/profile/editData', 'Profile::editData');
 $routes->get('/bagihasilsopir', 'Bagihasil::index');
