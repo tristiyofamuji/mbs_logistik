@@ -246,7 +246,7 @@
 							<span class="menu-text">Maintenance Truck</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<!-- <div class="menu-item">
 						<a href="<?= base_url('/pembelianmaintenance') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-money-bill-alt"></i></span>
 							<span class="menu-text">Pembelian Maintenance Truck</span>
@@ -257,7 +257,7 @@
 							<span class="menu-icon"><i class="fas fa-bug"></i></span>
 							<span class="menu-text">Perbaikan Di Lokasi Terpencil</span>
 						</a>
-					</div>
+					</div> -->
 					<div class="menu-item">
 						<a href="<?= base_url('/jualbelitruck') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-handshake"></i></span>
