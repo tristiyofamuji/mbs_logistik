@@ -36,6 +36,7 @@
 									<div class="profile-img">
 										<img src="assets/img/user/profile.jpg" alt="" />
 									</div>
+									
 									<!-- profile info -->
 									<h4><?= $user->name; ?></h4>
 									<div class="mb-3 text-white text-opacity-50 fw-bold mt-n2"><?= $user->username; ?></div>
