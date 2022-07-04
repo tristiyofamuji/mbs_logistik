@@ -167,7 +167,7 @@
 							<span class="menu-text">Pencatatan Keuangan</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Order'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/order') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-search"></i></span>
 							<span class="menu-text">Mencari Order</span>
