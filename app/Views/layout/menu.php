@@ -222,6 +222,12 @@
 							<span class="menu-text">Pencatatan Keuangan</span>
 						</a>
 					</div>
+					<div class="menu-item">
+						<a href="<?= base_url('/order') ?>" class="menu-link">
+							<span class="menu-icon"><i class="fas fa-search"></i></span>
+							<span class="menu-text">Mencari Order</span>
+						</a>
+					</div>
 					<div class="menu-item <?php if($title == 'Bagi Hasil Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/bagihasilsopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-truck"></i></span>
@@ -268,12 +274,6 @@
 						<a href="<?= base_url('/pajakdansim') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-tasks"></i></span>
 							<span class="menu-text">Pajak Dan SIM Mati</span>
-						</a>
-					</div>
-					<div class="menu-item">
-						<a href="<?= base_url('/order') ?>" class="menu-link">
-							<span class="menu-icon"><i class="fas fa-searchengin"></i></span>
-							<span class="menu-text">Mencari Order</span>
 						</a>
 					</div>
 					<div class="menu-divider"></div>

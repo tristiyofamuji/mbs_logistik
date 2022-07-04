@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use App\Models\UsersModel;
 
-class Maintenancetruck extends BaseController
+class Jualbelitruck extends BaseController
 {
     public function index()
     {
@@ -14,7 +14,7 @@ class Maintenancetruck extends BaseController
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
-              . view('maintenancetruck/index')
+              . view('jualbelitruck/index')
               . view('layout/footer');
     }
 
