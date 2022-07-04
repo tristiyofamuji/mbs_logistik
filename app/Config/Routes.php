@@ -60,6 +60,8 @@ $routes->get('/lacakposisi', 'Lacakposisi::index');
 $routes->get('/mainetenance', 'Maintenancetruck::index');
 $routes->get('/jualbelitruck', 'Jualbelitruck::index');
 $routes->get('/pajakdansim', 'Pajakdansim::index');
+$routes->get('/setting', 'Setting::index');
+$routes->get('/helper', 'Helper::index');
 
 /*
  * --------------------------------------------------------------------
