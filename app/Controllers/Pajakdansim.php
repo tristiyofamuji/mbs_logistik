@@ -3,18 +3,18 @@
 namespace App\Controllers;
 use App\Models\UsersModel;
 
-class Maintenancetruck extends BaseController
+class Pajakdansim extends BaseController
 {
     public function index()
     {
         $users =  new UsersModel();
         $data = [
-            'title' => 'Maintenance Truck',
+            'title' => 'Pajak dan SIM',
             'user' => $users->first()
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
-              . view('maintenancetruck/index')
+              . view('pajakdansim/index')
               . view('layout/footer');
     }
 

@@ -264,16 +264,16 @@
 							<span class="menu-text">Perbaikan Di Lokasi Terpencil</span>
 						</a>
 					</div> -->
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Jual Beli Truck'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/jualbelitruck') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-handshake"></i></span>
 							<span class="menu-text">Jual Beli Truck</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Pajak dan SIM'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/pajakdansim') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-tasks"></i></span>
-							<span class="menu-text">Pajak Dan SIM Mati</span>
+							<span class="menu-text">Pajak Dan SIM</span>
 						</a>
 					</div>
 					<div class="menu-divider"></div>
@@ -281,7 +281,7 @@
 					<div class="menu-item">
 						<a href="<?= base_url('/setting') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gear"></i></span>
-							<span class="menu-text">Settings</span>
+							<span class="menu-text">Setting</span>
 						</a>
 					</div>
 					<div class="menu-item">

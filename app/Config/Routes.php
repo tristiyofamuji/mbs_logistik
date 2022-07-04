@@ -59,6 +59,7 @@ $routes->get('/gajisopir', 'Gajisopir::index');
 $routes->get('/lacakposisi', 'Lacakposisi::index');
 $routes->get('/mainetenance', 'Maintenancetruck::index');
 $routes->get('/jualbelitruck', 'Jualbelitruck::index');
+$routes->get('/pajakdansim', 'Pajakdansim::index');
 
 /*
  * --------------------------------------------------------------------
