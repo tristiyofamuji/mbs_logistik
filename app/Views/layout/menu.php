@@ -240,7 +240,7 @@
 							<span class="menu-text">Melacak posisi truck</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php if($title == 'Maintenance Truck'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/mainetenance') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-wrench"></i></span>
 							<span class="menu-text">Maintenance Truck</span>
