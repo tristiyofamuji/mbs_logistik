@@ -23,9 +23,8 @@
 									<th class="border-top-0 pt-0 pb-2"></th>
 									<th class="border-top-0 pt-0 pb-2">ID Sopir</th>
 									<th class="border-top-0 pt-0 pb-2">Nama Sopir</th>
-									<th class="border-top-0 pt-0 pb-2">Wilayah</th>
-									<th class="border-top-0 pt-0 pb-2">Pemasukan</th>
-									<th class="border-top-0 pt-0 pb-2">Keterangan</th>
+									<th class="border-top-0 pt-0 pb-2">No. Kendaraan</th>
+									<th class="border-top-0 pt-0 pb-2">Posisi GPS</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -37,7 +36,6 @@
 										</div>
 									</td>
 									<td class="align-middle"><a href="#">#1950</a></td>
-									<td class="align-middle"></td>
 									<td class="align-middle"></td>
 									<td class="align-middle"></td>
 									<td class="align-middle"></td>
@@ -56,29 +54,3 @@
 			<!-- END table -->
 		</div>
 		<!-- END #content -->
-
-<script type="text/javascript">
-	$('#toolbar_tambah').on('click', function () {
-					$('.main_modal').on('show.bs.modal', function (e) {
-						if (xhr && xhr.readyState != 4) {
-							xhr.abort();
-						}
-						xhr = $.ajax({
-							type: 'POST',
-							url: '<?= base_url("keuangan/tambah/")?>',
-							datatype: 'json',
-							success: function (data) {
-								setTimeout(function () {
-									$('.modal_title').html('Tambah');
-									$('#modal_content').html(data);
-									$('.btn_simpan').attr('onclick', 'save("")');
-								}, 0000);
-							},
-							beforeSend: function () {
-								$('.modal_title').html('Sedang memuat data ...');
-							}
-						});
-					});
-					$('.main_modal').modal('show');
-				});
-</script>
