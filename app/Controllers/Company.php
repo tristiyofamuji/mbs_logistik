@@ -3,13 +3,13 @@
 namespace App\Controllers;
 use App\Models\UsersModel;
 
-class Setting extends BaseController
+class Company extends BaseController
 {
     public function index()
     {
         $users =  new UsersModel();
         $data = [
-            'title' => 'Setting',
+            'title' => 'Profil Usaha',
             'user' => $users->first()
         ];
         return view('layout/header', $data)

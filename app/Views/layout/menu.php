@@ -124,7 +124,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">
 						<a class="dropdown-item d-flex align-items-center" href="<?= base_url('profile') ?>">PROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
-						<a class="dropdown-item d-flex align-items-center" href="<?= base_url('setting') ?>">SETTINGS <i class="bi bi-gear ms-auto text-theme fs-16px my-n1"></i></a>
+						<a class="dropdown-item d-flex align-items-center" href="<?= base_url('company') ?>">PROFIL USAHA <i class="bi bi-gear ms-auto text-theme fs-16px my-n1"></i></a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item d-flex align-items-center" href="<?= base_url('login/logout') ?>">LOGOUT <i class="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i></a>
 					</div>
@@ -224,9 +224,9 @@
 					<div class="menu-divider"></div>
 					<div class="menu-header">Users</div>
 					<div class="menu-item <?php if($title == 'Setting'){ echo 'active'; } ?>">
-						<a href="<?= base_url('/setting') ?>" class="menu-link">
+						<a href="<?= base_url('/company') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gear"></i></span>
-							<span class="menu-text">Setting</span>
+							<span class="menu-text">Profil Usaha</span>
 						</a>
 					</div>
 					<div class="menu-item <?php if($title == 'Helper'){ echo 'active'; } ?>">
