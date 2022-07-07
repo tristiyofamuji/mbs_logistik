@@ -24,15 +24,15 @@
 			<div class="card">
 				<ul class="nav nav-tabs nav-tabs-v2 px-4">
 					<li class="nav-item me-3"><a href="#allTab" class="nav-link active px-2" data-bs-toggle="tab">All</a></li>
-					<li class="nav-item me-3"><a href="#bulan01" class="nav-link px-2" data-bs-toggle="tab">Januari</a></li>
-					<li class="nav-item me-3"><a href="#bulan02" class="nav-link px-2" data-bs-toggle="tab">Februari</a></li>
-					<li class="nav-item me-3"><a href="#bulan03" class="nav-link px-2" data-bs-toggle="tab">Maret</a></li>
-					<li class="nav-item me-3"><a href="#bulan04" class="nav-link px-2" data-bs-toggle="tab">April</a></li>
-					<li class="nav-item me-3"><a href="#bulan05" class="nav-link px-2" data-bs-toggle="tab">Mei</a></li>
-					<li class="nav-item me-3"><a href="#bulan06" class="nav-link px-2" data-bs-toggle="tab">Juni</a></li>
-					<li class="nav-item me-3"><a href="#bulan07" class="nav-link px-2" data-bs-toggle="tab">Juli</a></li>
-					<li class="nav-item me-3"><a href="#bulan08" class="nav-link px-2" data-bs-toggle="tab">Agustus</a></li>
-					<li class="nav-item me-3"><a href="#bulan09" class="nav-link px-2" data-bs-toggle="tab">September</a></li>
+					<li class="nav-item me-3"><a href="#bulan1" class="nav-link px-2" data-bs-toggle="tab">Januari</a></li>
+					<li class="nav-item me-3"><a href="#bulan2" class="nav-link px-2" data-bs-toggle="tab">Februari</a></li>
+					<li class="nav-item me-3"><a href="#bulan3" class="nav-link px-2" data-bs-toggle="tab">Maret</a></li>
+					<li class="nav-item me-3"><a href="#bulan4" class="nav-link px-2" data-bs-toggle="tab">April</a></li>
+					<li class="nav-item me-3"><a href="#bulan5" class="nav-link px-2" data-bs-toggle="tab">Mei</a></li>
+					<li class="nav-item me-3"><a href="#bulan6" class="nav-link px-2" data-bs-toggle="tab">Juni</a></li>
+					<li class="nav-item me-3"><a href="#bulan7" class="nav-link px-2" data-bs-toggle="tab">Juli</a></li>
+					<li class="nav-item me-3"><a href="#bulan8" class="nav-link px-2" data-bs-toggle="tab">Agustus</a></li>
+					<li class="nav-item me-3"><a href="#bulan9" class="nav-link px-2" data-bs-toggle="tab">September</a></li>
 					<li class="nav-item me-3"><a href="#bulan10" class="nav-link px-2" data-bs-toggle="tab">Oktober</a></li>
 					<li class="nav-item me-3"><a href="#bulan11" class="nav-link px-2" data-bs-toggle="tab">November</a></li>
 					<li class="nav-item me-3"><a href="#bulan12" class="nav-link px-2" data-bs-toggle="tab">Desember</a></li>
@@ -70,24 +70,6 @@
 							</table>
 						</div>
 						<!-- END table -->
-						<div class="modal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">
-                                        &times;
-                                    </button>
-                                    <h4 class="modal_title"></h4>
-                                    </div>
-                                    <div id="modal_content" class="modal-body"></div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-outline-theme">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-						
 					</div>
 				</div>
 				<div class="card-arrow">
@@ -99,6 +81,25 @@
 			</div>
 		</div>
 		<!-- END #content -->
+
+		
+		<div class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal_title"></h4>
+					</div>
+					<div id="modal_content" class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-outline-theme">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 <script type="text/javascript">
 	$('#toolbar_tambah').on('click', function () {
