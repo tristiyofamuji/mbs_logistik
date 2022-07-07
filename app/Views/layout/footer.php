@@ -37,7 +37,7 @@
 		lengthMenu: [ 10, 20, 30, 40, 50 ],
 		responsive: true,
         ordering: true,
-		searching: false,
+		searching: true,
 		buttons: [ 
 		/* { extend: 'print', className: 'btn btn-default' },
 		{ extend: 'csv', className: 'btn btn-default' } */
@@ -45,4 +45,19 @@
 	});
 	</script>
 	</body>
+	
+	window.setTimeout(function() { 
+		$(".alert-warning").fadeTo(500, 0).slideUp(500,
+		function(){ 
+			$(this).remove(); 
+		}); 
+	}, 2000);
+	
+	window.setTimeout(function() { 
+		$(".alert-success").fadeTo(500, 0).slideUp(500,
+		function(){ 
+			$(this).remove(); 
+		}); 
+	}, 5000);
+    </script>
 </html>

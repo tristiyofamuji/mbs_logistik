@@ -38,25 +38,34 @@ $routes->set404Override();
 // $routes->get('/', 'Home::index');
 $routes->get('/', function () {
     if(session('LT@logged_in') != TRUE){
-	    throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    // throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        return redirect()->to('/login');
     }else{
         return redirect()->to('/home');
     }
 });
-$routes->get('/home', 'Home::index');
-$routes->get('/pages', 'Pages::index');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/auth', 'Login::auth');
 $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
+$routes->get('/home', 'Home::index');
 $routes->get('/keuangan', 'Keuangan::index');
 // $routes->get('/keuangan/create', 'Keuangan::create');
 // $routes->post('/keuangan/create', 'Keuangan::create');
 $routes->get('/keuangan/store', 'Keuangan::store');
+$routes->get('/order', 'Order::index');
 $routes->get('/profile', 'Profile::index');
+$routes->post('/profile/editData', 'Profile::editData');
 $routes->get('/bagihasilsopir', 'Bagihasil::index');
 $routes->post('/keuangan/store', 'Keuangan::store');
+$routes->get('/gajisopir', 'Gajisopir::index');
+$routes->get('/lacakposisi', 'Lacakposisi::index');
+$routes->get('/mainetenance', 'Maintenancetruck::index');
+$routes->get('/jualbelitruck', 'Jualbelitruck::index');
+$routes->get('/pajakdansim', 'Pajakdansim::index');
+$routes->get('/company', 'Company::index');
+$routes->get('/helper', 'Helper::index');
 
 /*
  * --------------------------------------------------------------------

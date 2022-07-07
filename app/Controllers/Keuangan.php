@@ -4,13 +4,16 @@ namespace App\Controllers;
 use App\Models\KeuanganModel;
 use CodeIgniter\Controller;
 //namespace \Config\Services::session($config);
+use App\Models\UsersModel;
 
 class Keuangan extends BaseController
 {
     public function index()
     {
+        $users =  new UsersModel();
         $data = [
-            'title' => 'Keuangan'
+            'title' => 'Keuangan',
+            'user' => $users->first()
         ];
         $model = new KeuanganModel();
  

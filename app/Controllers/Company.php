@@ -3,18 +3,18 @@
 namespace App\Controllers;
 use App\Models\UsersModel;
 
-class Home extends BaseController
+class Company extends BaseController
 {
     public function index()
     {
         $users =  new UsersModel();
         $data = [
-            'title' => 'Home',
+            'title' => 'Profil Usaha',
             'user' => $users->first()
         ];
         return view('layout/header', $data)
               . view('layout/menu', $data)
-              . view('home')
+              . view('setting/index')
               . view('layout/footer');
     }
 }

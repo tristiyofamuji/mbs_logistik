@@ -26,6 +26,10 @@ class Users extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '100',
 			],
+			'phone'       => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '20',
+			],
 			'created_at' => [
 				'type'           => 'DATETIME',
 				'null'       	 => true,

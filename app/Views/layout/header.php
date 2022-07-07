@@ -19,5 +19,10 @@
 	<link href="<?= base_url() ?>/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
 	<script src="<?= base_url() ?>/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!-- required css -->
+	<link href="<?= base_url() ?>/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
+
 </head>
 <body>
