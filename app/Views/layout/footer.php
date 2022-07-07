@@ -4,8 +4,6 @@
 	</div>
 	<!-- END #app -->
 	
-    
-</body>
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="<?= base_url() ?>/assets/js/vendor.min.js"></script>
 	<script src="<?= base_url() ?>/assets/js/app.min.js"></script>
@@ -17,6 +15,7 @@
 	<!-- ================== END page-js ================== -->
 
 	<!-- required js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -27,8 +26,12 @@
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="<?= base_url() ?>/assets/js/demo/ui-modal-notification.demo.js"></script>
 	<!-- script -->
 	<script>
+	// 	$('#datepicker').datepicker({
+	// 	autoclose: true
+	// });
 	$('#datatableDefault').DataTable({
 		dom: "<'row mb-3'<'col-sm-4'l><'col-sm-8 text-end'<'d-flex justify-content-end'fB>>>t<'d-flex align-items-center'<'me-auto'i><'mb-0'p>>",
 		lengthMenu: [ 10, 20, 30, 40, 50 ],
@@ -41,4 +44,5 @@
 		]
 	});
 	</script>
+	</body>
 </html>

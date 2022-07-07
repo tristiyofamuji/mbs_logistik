@@ -1,3 +1,8 @@
+<?php if (!empty(session()->getFlashdata('error'))) : ?>
+									<div class="alert alert-warning alert-dismissible fade show" role="alert">
+										<center><?php echo session()->getFlashdata('error'); ?></center>
+									</div>	
+								<?php endif; ?>
 <!-- BEGIN #content -->
 <div id="content" class="app-content">
 			<div class="d-flex align-items-center mb-3">
@@ -10,13 +15,14 @@
 				</div>
 				
 				<div class="ms-auto">
-					<a href="" class="btn btn-outline-theme" id="toolbar_tambah" data-target="modal_tambah" data-toggle="modal" data-original-title="Tambah"><i class="fa fa-plus-circle fa-fw me-1"></i> Create Invoice</a>
+					<a href="#TambahModal" class="btn btn-outline-theme" data-bs-toggle="modal" data-original-title="Tambah"><i class="fa fa-plus-circle fa-fw me-1"></i> Create Invoice</a>
 				</div>
 			</div>
 			
 			<div class="mb-md-4 mb-3 d-md-flex">
 				<div class="mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-download fa-fw me-1 text-theme"></i> Export</a></div>
-				<div class="ms-md-4 mt-md-0 mt-2 dropdown-toggle">
+				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-lg fa-fw me-2 fa-edit text-theme"></i> Edit</a></div>
+				<div class="ms-md-2 mt-md-0 mt-2 dropdown-toggle">
 					<a href="#" data-bs-toggle="dropdown" class="text-white text-opacity-75 text-decoration-none">More Actions</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="#">Action</a>
@@ -83,6 +89,7 @@
 									</tr>
 								</thead>
 								<tbody>
+								<?php foreach($keuangan as $value):?>
 									<tr>
 										<td class="w-10px align-middle">
 											<div class="form-check">
@@ -90,35 +97,20 @@
 												<label class="form-check-label" for="product1"></label>
 											</div>
 										</td>
-										<td class="align-middle"><a href="#">#1950</a></td>
-										<td class="align-middle"></td>
-										<td class="align-middle"></td>
-										<td class="align-middle"></td>
-										<td class="align-middle"></td>
-										<td class="align-middle"></td>
+										
+										<td><?=$value['id'];?></td>
+										<td><?=$value['pemasukan'];?></td>
+										<td><?=$value['pengeluaran'];?></td>
+										<td><?=$value['tgl_masuk'];?></td>
+										<td><?=$value['tgl_keluar'];?></td>
+										<td><?=$value['keterangan'];?></td>
+										
 									</tr>
+									<?php endforeach;?>
 								</tbody>
 							</table>
 						</div>
-						<!-- END table -->
-						<div class="modal">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">
-										&times;
-									</button>
-									<h4 class="modal_title"></h4>
-									</div>
-									<div id="modal_content" class="modal-body"></div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-outline-theme">Save changes</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+						<!-- END table -->									
 					</div>
 				</div>
 				<div class="card-arrow">
@@ -130,29 +122,67 @@
 			</div>
 		</div>
 		<!-- END #content -->
+		<!-- BEGIN modal-->
+						<form action="<?= base_url('keuangan/store') ?>" method="POST" name="tambah_keuangan" id="tambah_keuangan">
+						<div class="modal fade" id="TambahModal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">MODAL TITLE</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+								</div>
+								<div class="modal-body">
+								<div class="row">
+									<div class="form-group col-sm-12">
+											<label class="col-sm-2 control-label">
+												Uang Masuk
+											</label>
+											<div class="col-sm-9">
+												<textarea id="pemasukan" name="pemasukan" placeholder="Pemasukan"
+													class="form-control"></textarea>
+											</div>
+									</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-2 control-label">
+												Uang Keluar
+											</label>
+											<div class="col-sm-9">
+												<textarea id="pengeluaran" name="pengeluaran" placeholder="Pengeluaran"
+													class="form-control"></textarea>
+											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-2">
+												Tanggal Masuk
+											</label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control" id="datepicker" name="tgl_masuk" placeholder="dd/mm/yyyy" />											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-2">
+												Tanggal Keluar
+											</label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control" id="datepicker" name="tgl_keluar" placeholder="dd/mm/yyyy" />											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-2 control-label">
+												Keterangan
+											</label>
+											<div class="col-sm-9">
+												<input id="keterangan" name="keterangan" type="text" placeholder="Keterangan" class="form-control">
+											</div>
+										</div>
+								</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+									<button type="submit" class="btn btn-outline-theme">Save changes</button>
+								</div>
+								</div>
+							</div>
+						</div>
+						</form>
 
-<script type="text/javascript">
-	$('#toolbar_tambah').on('click', function () {
-					$('.main_modal').on('show.bs.modal', function (e) {
-						if (xhr && xhr.readyState != 4) {
-							xhr.abort();
-						}
-						xhr = $.ajax({
-							type: 'POST',
-							url: '<?= base_url("keuangan/tambah/")?>',
-							datatype: 'json',
-							success: function (data) {
-								setTimeout(function () {
-									$('.modal_title').html('Tambah');
-									$('#modal_content').html(data);
-									$('.btn_simpan').attr('onclick', 'save("")');
-								}, 0000);
-							},
-							beforeSend: function () {
-								$('.modal_title').html('Sedang memuat data ...');
-							}
-						});
-					});
-					$('.main_modal').modal('show');
-				});
-</script>
+						
+						<!-- BEGIN modal -->

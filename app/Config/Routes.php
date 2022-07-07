@@ -51,8 +51,12 @@ $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
 $routes->get('/keuangan', 'Keuangan::index');
+// $routes->get('/keuangan/create', 'Keuangan::create');
+// $routes->post('/keuangan/create', 'Keuangan::create');
+$routes->get('/keuangan/store', 'Keuangan::store');
 $routes->get('/profile', 'Profile::index');
 $routes->get('/bagihasilsopir', 'Bagihasil::index');
+$routes->post('/keuangan/store', 'Keuangan::store');
 
 /*
  * --------------------------------------------------------------------
