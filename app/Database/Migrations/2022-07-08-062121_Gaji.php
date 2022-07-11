@@ -22,10 +22,6 @@ class Gaji extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '100',
 			],
-			'wilayah'       => [
-				'type'           => 'DATETIME',
-				'constraint'     => true,
-			],
 			'periode' => [
 				'type'           => 'DATE',
 				'null'       	 => true,
