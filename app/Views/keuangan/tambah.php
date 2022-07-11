@@ -29,7 +29,7 @@
 												Tanggal Keluar
 											</label>
 											<div class="col-sm-9">
-											<input type="text" class="form-control" id="datepicker" name="tgl_keluar" placeholder="dd/mm/yyyy" />											</div>
+											<input type="date" class="form-control" id="datepicker" name="tgl_keluar" placeholder="dd/mm/yyyy" />											</div>
 										</div>
 										<div class="form-group col-sm-12">
 											<label class="col-sm-2 control-label">

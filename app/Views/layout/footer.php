@@ -15,7 +15,7 @@
 	<!-- ================== END page-js ================== -->
 
 	<!-- required js -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="<?= base_url() ?>/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -43,8 +43,6 @@
 		{ extend: 'csv', className: 'btn btn-default' } */
 		]
 	});
-	</script>
-	</body>
 	
 	window.setTimeout(function() { 
 		$(".alert-warning").fadeTo(500, 0).slideUp(500,
@@ -60,4 +58,6 @@
 		}); 
 	}, 5000);
     </script>
+	</body>
+	
 </html>

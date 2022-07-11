@@ -28,7 +28,7 @@ class Keuangan extends BaseController
         return view('keuangan/tambah');
     }
     function store(){
-        if (!$this->validate([
+        /* if (!$this->validate([
                 'pemasukan' => [
                     'rules' => 'required|min_length[12]|max_length[100]',
                     'errors' => [
@@ -44,7 +44,7 @@ class Keuangan extends BaseController
             ])) {
                 session()->setFlashdata('error', 'gagal menambah data');
                 return redirect()->to('/keuangan')->withInput();
-            }         
+            } */         
         $keuangan = new KeuanganModel();
         $keuangan->insert([
             'pemasukan' => $this->request->getVar('pemasukan'),
@@ -53,6 +53,7 @@ class Keuangan extends BaseController
             'tgl_keluar' => $this->request->getVar('tgl_keluar'),
             'keterangan' => $this->request->getVar('keterangan'),
             ]);
+
         session()->setFlashdata('success', 'Proses tambah data berhasil.');
         return redirect()->to('/keuangan');
     }
