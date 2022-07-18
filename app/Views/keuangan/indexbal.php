@@ -3,11 +3,6 @@
 										<center><?php echo session()->getFlashdata('error'); ?></center>
 									</div>	
 								<?php endif; ?>
-								<?php if (!empty(session()->getFlashdata('success'))) : ?>
-									<div class="alert alert-success alert-dismissible fade show" role="alert">
-										<center><?php echo session()->getFlashdata('success'); ?></center>
-									</div>	
-								<?php endif; ?>
 <!-- BEGIN #content -->
 <div id="content" class="app-content">
 			<div class="d-flex align-items-center mb-3">
@@ -19,16 +14,14 @@
 					<h1 class="page-header mb-0"><?= $title ?></h1>
 				</div>
 				
-				<!-- <div class="ms-auto">
+				<div class="ms-auto">
 					<a href="#TambahModal" class="btn btn-outline-theme" data-bs-toggle="modal" data-original-title="Tambah"><i class="fa fa-plus-circle fa-fw me-1"></i> Create Invoice</a>
-					<a href="#" id="toolbar_tambah" data-target="modal_tambah" data-toggle="modal" class="btn btn-xs btn-primary tooltips" style="padding-top:5px;" data-original-title="Tambah"><i class="fa fa-plus"></i></a>				</div> -->
+				</div>
 			</div>
 			
 			<div class="mb-md-4 mb-3 d-md-flex">
-				<div class="mt-md-0 mt-2"><a href="#" id="toolbar_tambah" data-target="modal_tambah" data-toggle="modal" class="text-white text-opacity-75 text-decoration-none" data-original-title="Tambah"><i class="fa fa-lg fa-fw me-2 fa-plus text-theme"></i>Tambah</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_edit" class="text-white text-opacity-75 text-decoration-none" data-toggle="modal" data-original-title="Edit"><i class="fa fa-lg fa-fw me-2 fa-edit text-theme"></i>Edit</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_delete" data-bs-target="#ModalDelete" class="text-white text-opacity-75 text-decoration-none" data-bs-toggle="modal" data-original-title="Remove"><i class="fa fa-lg fa-fw me-2 fa-remove text-theme"></i>Delete</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-download fa-fw me-1 text-theme"></i> Export</a></div>
+				<div class="mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-download fa-fw me-1 text-theme"></i> Export</a></div>
+				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_edit" class="text-white text-opacity-75 text-decoration-none" data-bs-toggle="modal" data-original-title="Edit"><i class="fa fa-lg fa-fw me-2 fa-edit text-theme"></i> Edit</a></div>
 				<div class="ms-md-2 mt-md-0 mt-2 dropdown-toggle">
 					<a href="#" data-bs-toggle="dropdown" class="text-white text-opacity-75 text-decoration-none">More Actions</a>
 					<div class="dropdown-menu">
@@ -95,7 +88,7 @@
 										<th class="border-top-0 pt-0 pb-2">Keterangan</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody id="tbody" class="animated">
 								<?php foreach($keuangan as $value):?>
 									<tr id="kolom<?=$value['id']?>" onclick="action('<?=$value['id']?>')" class="">
 										<td class="w-10px align-middle">
@@ -111,7 +104,7 @@
 										<td><?=$value['tgl_masuk'];?></td>
 										<td><?=$value['tgl_keluar'];?></td>
 										<td><?=$value['keterangan'];?></td>
-	
+										
 									</tr>
 									<?php endforeach;?>
 								</tbody>
@@ -129,125 +122,137 @@
 			</div>
 		</div>
 		<!-- END #content -->
-			<div class="modal fade main_modal" tabindex="-1" data-width="760" style="display: none;">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal_title"></h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					<!-- BEGIN modal-->
+					
+						<div class="modal fade" id="TambahModal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Tambah Data</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+								</div>
+								<form action="<?= base_url('keuangan/create') ?>" method="POST" name="tambah_keuangan" id="tambah_keuangan">
+								<div class="modal-body">
+								<div class="row">
+									<div class="form-group col-sm-12">
+											<label class="col-sm-6 control-label">
+												Uang Masuk
+											</label>
+											<div class="col-sm-12">
+												<input type="text" id="pemasukan" name="pemasukan" placeholder="Pemasukan"
+													class="form-control" required>
+											</div>
+									</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-6 control-label">
+												Uang Keluar
+											</label>
+											<div class="col-sm-12">
+												<input id="pengeluaran" name="pengeluaran" placeholder="Pengeluaran"
+													class="form-control">
+											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-6">
+												Tanggal Masuk
+											</label>
+											<div class="col-sm-12">
+											<input type="date" class="form-control" name="tgl_masuk" placeholder="dd/mm/yyyy" />											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-6">
+												Tanggal Keluar
+											</label>
+											<div class="col-sm-12">
+											<input type="date" class="form-control" name="tgl_keluar" placeholder="dd/mm/yyyy" />											</div>
+										</div>
+										<div class="form-group col-sm-12">
+											<label class="col-sm-6 control-label">
+												Keterangan
+											</label>
+											<div class="col-sm-12">
+												<textarea id="keterangan" name="keterangan" type="text" placeholder="Keterangan" class="form-control"></textarea>
+											</div>
+										</div>
+								</div>
+								</div>
+								</form>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+									<button type="submit" class="btn btn-outline-theme">Save changes</button>
+								</div>
+								</div>
+							</div>
 						</div>
-						<div id="modal_content" class="modal-body"></div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-outline-theme btn_simpan">Save changes</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<script type="text/javascript">
-
-				function save(id = "") {
-					$.ajax({
-						type: 'POST',
-						url: '<?= base_url("keuangan/save/") ?>/' + id,
-						dataType: 'json',
-						data: {
-							pemasukan: $('input[name="pemasukan"]').val(),
-							pengeluaran: $('input[name="pengeluaran"]').val(),
-							tgl_masuk: $('input[name="tgl_masuk"]').val(),
-							tgl_keluar: $('input[name="tgl_keluar"]').val(),
-							keterangan: $('textarea[name="keterangan"]').val(),
-						},
-						success: function (data) {
-							$('.main_modal').modal('hide');		
-						}
-					});		
-				}
-
-				$('#toolbar_tambah').on('click', function () {
-					$('.main_modal').on('show.bs.modal', function (e) {
 						
-						if (xhr && xhr.readyState != 4) {
-							xhr.abort();
-						}
-						xhr = $.ajax({
-							type: 'POST',
-							url: '<?= base_url("keuangan/tambah/")?>',
-							datatype: 'json',
-							success: function (data) {
-								setTimeout(function () {
-									$('.modal_title').html('Tambah');
-									$('#modal_content').html(data);
-									$('.btn_simpan').attr('onclick', 'save()');
-								}, 1000);
-							},
-							beforeSend: function () {
-								$('.modal_title').html('Sedang memuat data ...');
+						<!-- BEGIN modal -->
+
+					<!-- BEGIN modal-->
+					
+						<div class="modal fade main_modal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal_title"></h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+									</div>
+									<div id="modal_content" class="modal-body"></div>
+									
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-outline-theme">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- BEGIN modal -->
+						<script type="text/javascript">
+							function action(id) {
+								$('tr').css({
+									'background-color': '',
+									'color': ''
+								});
+								$('#kolom' + id).css({
+									'background-color': '#FFE48D',
+									'color': '#9E6007'
+								});
+								$('#btn_delete').attr('onclick', "remove('" + id + "')");
+								$('#toolbar_delete').removeAttr('disabled');
+								$('#toolbar_edit').attr('onclick', "edit('" + id + "')");
+								$('#edit').removeAttr('disabled');
 							}
-						});
-					});
-					$('.main_modal').modal('show');
-				});
-	
-				function action(id) {
-					$('tr').css({
-						'background-color': '',
-						'color': ''
-					});
-					$('#kolom' + id).css({
-						'background-color': '#FFE48D',
-						'color': '#9E6007'
-					});
-					$('#toolbar_delete').removeAttr('disabled');
-					$('#btn_delete').attr('onclick', "remove('" + id + "')");
-					$('#toolbar_edit').attr('onclick', "edit('" + id + "')");
-					$('#edit').removeAttr('disabled');
-				}
 
-				function edit(id) {
-					$('.main_modal').on('show.bs.modal', function (e) {
-						if (xhr && xhr.readyState != 4) {
-							xhr.abort();
-						}
-						xhr = $.ajax({
-						type: 'POST',
-						url: '<?= base_url("keuangan/edit/")?>/'+ id,
-						dataType: 'json',
-						success: function (data) {	
-							setTimeout(function () {
-								$('#modal_content').html(data);
-								$('.modal_title').html('Edit');
-								$('.btn_simpan').attr('onclick', 'save("' + id + '")');
-								$('.btn_simpan').css('display', 'inline-block');
-							}, 1000);
-						},
-						beforeSend: function () {
-							$('.modal_title').html('Sedang memuat data ..');
-							$('#modal_content').html(loader_2());
-						}
-						});		
-					});
-					$('.main_modal').modal('show');
-				}	
+							xhr = null;
+							function edit(id) {
+								$('.main_modal').on('show.bs.modal', function (e) {
+									if (xhr && xhr.readyState != 4) {
+										xhr.abort();
+									}
+									xhr = $.ajax({
+										type: 'POST',
+										url: '<?= base_url("keuangan/edit")?>/'+ id,
+										dataType: 'json',
+										success: function (data) {
+												$('.modal_title').html('Edit cuk');
+												$('#modal_content').html(data);
+												$('.btn_simpan').attr('onclick', 'save("' + id + '")');
+												$('.btn_simpan').css('display', 'inline-block');
+										},
+										beforeSend: function () {
+											$('.modal_title').html('Sedang memuat data ..');
+											// $('#modal_content').html(loader_2());
+										}
+									});
+								});
+								$('.main_modal').modal('show');
+							}	
+						</script>
+						<script>
+							jQuery(document).ready(function () {
+								Main.init();
+								Index.init();
+							});
 
-				function remove(id) {
-					$.ajax({
-						type: 'POST',
-						url: '<?= base_url("keuangan/delete/") ?>/' + id,
-						dataType: 'json',
-						success: function (data) {
-							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
-							load_data(pageno);
-							$('#toolbar_delete').attr('disabled', 'true');
-							$('#modal_hapus').modal('hide');
-						}
-					});
-				}
-			</script>
-				<!-- <script>
-				jQuery(document).ready(function () {
-					Main.init();
-					Index.init();
-				});
-
-			</script> -->
+						</script>
+				

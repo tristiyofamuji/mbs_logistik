@@ -2,13 +2,15 @@
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">Uang Masuk</label>
 		<div class="col-sm-12">
-			<input type="text" id="pemasukan" name="pemasukan" placeholder="Pemasukan" class="form-control" required>
+			<input type="text" id="pemasukan" name="pemasukan" placeholder="Pemasukan" 
+				class="form-control" value="<?=$keuangan['pemasukan']?>" required>
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">Uang Keluar</label>
 		<div class="col-sm-12">
-			<input id="pengeluaran" name="pengeluaran" placeholder="Pengeluaran" class="form-control">
+			<input id="pengeluaran" name="pengeluaran" placeholder="Pengeluaran"
+				class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">

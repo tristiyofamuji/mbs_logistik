@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TKeuangan extends Migration
+class Tkeuangan extends Migration
 {
     public function up()
     {
@@ -23,21 +23,20 @@ class TKeuangan extends Migration
 				'constraint'     => '100',
 			],
 			'tgl_masuk'       => [
-				'type'           => 'DATETIME',
-				'constraint'     => true,
+				'type'           => 'DATE',
 			],
 			'tgl_keluar' => [
-				'type'           => 'DATETIME',
-				'null'       	 => true,
+				'type'           => 'DATE',
             ],
             'keterangan' => [
                 'type'  => 'VARCHAR',
                 'constraint' => '225',
             ],
- 
+			'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
+			'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP'
 		]);
 		$this->forge->addPrimaryKey('id', true);
-		$this->forge->createTable('t_keuangan');
+		$this->forge->createTable('t_keuangan',TRUE);
     }
 
     public function down()

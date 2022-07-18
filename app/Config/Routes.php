@@ -51,9 +51,13 @@ $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
 $routes->get('/home', 'Home::index');
 $routes->get('/keuangan', 'Keuangan::index');
-// $routes->get('/keuangan/create', 'Keuangan::create');
-// $routes->post('/keuangan/create', 'Keuangan::create');
-$routes->get('/keuangan/store', 'Keuangan::store');
+$routes->add('/keuangan/tambah', 'Keuangan::tambah');
+$routes->add('/keuangan/save', 'Keuangan::save');
+$routes->add('/keuangan/save(:any)', 'Keuangan::save/$1');
+$routes->add('/keuangan/edit/(:any)', 'Keuangan::edit/$1');
+$routes->add('/keuangan/delete/(:segment)', 'Keuangan::delete/$1');
+$routes->add('/keuangan/datagrid/(:segment)', 'Keuangan::datagrid/$1');
+
 $routes->get('/order', 'Order::index');
 $routes->get('/profile', 'Profile::index');
 $routes->post('/profile/editData', 'Profile::editData');
