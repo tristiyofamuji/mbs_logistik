@@ -37,16 +37,6 @@
 										<img src="assets/img/user/profile.jpg" alt="" />
 									</div>
 									
-									<!-- profile info -->
-									<h4><?= $user->name; ?></h4>
-									<div class="mb-3 text-white text-opacity-50 fw-bold mt-n2"><?= $user->username; ?></div>
-									<hr class="mt-4 mb-4" />
-									<div class="mb-1">
-										<i class="fa fa-map-marker-alt fa-fw text-white text-opacity-50"></i> New York, NY
-									</div>
-									<div class="mb-3">
-										<i class="fa fa-link fa-fw text-white text-opacity-50"></i> seantheme.com/hud
-									</div>
 														
 								</div>
 							</div>
