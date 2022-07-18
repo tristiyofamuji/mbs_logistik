@@ -55,6 +55,13 @@
 	// 	$('#datepicker').datepicker({
 	// 	autoclose: true
 	// });
+	function loading(type, msg) {
+			$('#snackbar2').addClass('show');
+			$('#snackbar2').html(msg);
+		}
+	function loaded(){
+  		$('#snackbar2').removeClass('show');
+	}
 	NProgress.configure({
 		showSpinner: true,
 		parent: '.br-mainpanel'

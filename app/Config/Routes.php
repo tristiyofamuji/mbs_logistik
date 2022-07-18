@@ -53,7 +53,7 @@ $routes->get('/home', 'Home::index');
 $routes->get('/keuangan', 'Keuangan::index');
 $routes->add('/keuangan/tambah', 'Keuangan::tambah');
 $routes->add('/keuangan/save', 'Keuangan::save');
-$routes->add('/keuangan/save(:any)', 'Keuangan::save/$1');
+$routes->add('/keuangan/save/(:any)', 'Keuangan::save/$1');
 $routes->add('/keuangan/edit/(:any)', 'Keuangan::edit/$1');
 $routes->add('/keuangan/delete/(:segment)', 'Keuangan::delete/$1');
 $routes->add('/keuangan/datagrid/(:segment)', 'Keuangan::datagrid/$1');

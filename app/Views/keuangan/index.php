@@ -95,25 +95,12 @@
 										<th class="border-top-0 pt-0 pb-2">Keterangan</th>
 									</tr>
 								</thead>
-								<tbody>
-								<?php foreach($keuangan as $value):?>
-									<tr id="kolom<?=$value['id']?>" onclick="action('<?=$value['id']?>')" class="">
-										<td class="w-10px align-middle">
-											<div class="form-check">
-												<input type="checkbox" class="form-check-input" id="product1">
-												<label class="form-check-label" for="product1"></label>
-											</div>
+								<tbody id="tbody" class="animated table_content">
+									<tr>
+										<td colspan="5"><i id="spinner" class="fa fa-spinner"></i> &nbsp; Loading.. Mohon
+											tunggu.
 										</td>
-										
-										<td><?=$value['id'];?></td>
-										<td><?=$value['pemasukan'];?></td>
-										<td><?=$value['pengeluaran'];?></td>
-										<td><?=$value['tgl_masuk'];?></td>
-										<td><?=$value['tgl_keluar'];?></td>
-										<td><?=$value['keterangan'];?></td>
-	
 									</tr>
-									<?php endforeach;?>
 								</tbody>
 							</table>
 						</div>
@@ -145,7 +132,7 @@
 				</div>
 			</div>
 			<script type="text/javascript">
-
+				load_data();
 				function save(id = "") {
 					$.ajax({
 						type: 'POST',
@@ -159,6 +146,8 @@
 							keterangan: $('textarea[name="keterangan"]').val(),
 						},
 						success: function (data) {
+							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
+							load_data(pageno);
 							$('.main_modal').modal('hide');		
 						}
 					});		
@@ -188,7 +177,7 @@
 					});
 					$('.main_modal').modal('show');
 				});
-	
+				
 				function action(id) {
 					$('tr').css({
 						'background-color': '',
@@ -198,8 +187,8 @@
 						'background-color': '#FFE48D',
 						'color': '#9E6007'
 					});
-					$('#toolbar_delete').removeAttr('disabled');
 					$('#btn_delete').attr('onclick', "remove('" + id + "')");
+					$('#toolbar_delete').removeAttr('disabled');
 					$('#toolbar_edit').attr('onclick', "edit('" + id + "')");
 					$('#edit').removeAttr('disabled');
 				}
@@ -214,12 +203,10 @@
 						url: '<?= base_url("keuangan/edit/")?>/'+ id,
 						dataType: 'json',
 						success: function (data) {	
-							setTimeout(function () {
 								$('#modal_content').html(data);
 								$('.modal_title').html('Edit');
 								$('.btn_simpan').attr('onclick', 'save("' + id + '")');
 								$('.btn_simpan').css('display', 'inline-block');
-							}, 1000);
 						},
 						beforeSend: function () {
 							$('.modal_title').html('Sedang memuat data ..');
@@ -237,17 +224,59 @@
 						dataType: 'json',
 						success: function (data) {
 							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
-							load_data(pageno);
+							load_data();
 							$('#toolbar_delete').attr('disabled', 'true');
 							$('#modal_hapus').modal('hide');
 						}
 					});
 				}
+				function load_data(pageno) {
+				$.ajax({
+					type: 'POST',
+					url: '<?= base_url("keuangan/datagrid/")?>/' + pageno,
+					dataType: 'json',
+					success: function (data) {
+						// console.log(data);
+						if (data.pagination > 12) {
+							$('#pagination').css('margin-right', '5px');
+						}
+						$('#pagination').html(data.pagination);
+						$('.table_content').html(data.tabel);
+						$('.total_data').html('Total : ' + data.total_data + ' Data');
+					}
+				});
+				}
+				$(document).ready(function () {
+					$('#pagination').on('click', 'a', function (e) {
+						e.preventDefault();
+						var pageno = $(this).attr('data-ci-pagination-page');
+						$.ajax({
+							url: '<?= base_url("keuangan/datagrid/")?>' + pageno,
+							type: 'get',
+							dataType: 'json',
+							success: function (data) {
+								loaded();
+								if (data.pagination > 14) {
+									$('#pagination').css('margin-right', '5px');
+								}
+								$('#pagination').html(data.pagination);
+								$('.table_content').html(data.tabel);
+								NProgress.done();
+							},
+							beforeSend: function () {
+								loading('success',
+									'<i class="fa fa-spinner" id="spinner"></i> &nbsp;sedang mengambil data..'
+									);
+								NProgress.start();
+							}
+						});
+					});
+				});
 			</script>
-				<!-- <script>
+				<script>
 				jQuery(document).ready(function () {
 					Main.init();
 					Index.init();
 				});
 
-			</script> -->
+			</script>

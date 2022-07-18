@@ -16,7 +16,16 @@ class Keuangan extends BaseController
         $this->users = new UsersModel();
     }
 
-    public function index()
+    public function index(){
+        $data = [
+            'title' => 'Keuangan',
+            'konten' => 'keuangan/index',
+            'user' => $this->users->first()
+        ];
+        return view('layout/app', $data);
+    }
+
+    public function datagrid()
     {
         $data = [
             'title' => 'Keuangan',
@@ -24,10 +33,8 @@ class Keuangan extends BaseController
         ];
 
         $data['keuangan'] = $this->keuangan->orderBy('id','DESC')->findAll();
-        return view('layout/header', $data)
-              . view('layout/menu', $data)
-              . view('keuangan/index',$data)
-              . view('layout/footer');
+        $view = view('keuangan/grid', $data);
+        echo json_encode(['tabel' => $view]);
     }
     public function tambah(){
         return view('keuangan/tambah');
@@ -43,7 +50,7 @@ class Keuangan extends BaseController
         $validation->setRules(['pemasukan' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
         if($isDataValid){
-            dump($id);
+            
             if($id == ""){
                 $this->keuangan->insert([
                     "pemasukan" => $this->request->getPost('pemasukan'),
@@ -52,8 +59,8 @@ class Keuangan extends BaseController
                     "tgl_keluar" => $this->request->getPost('tgl_keluar'),
                     "keterangan" => $this->request->getPost('keterangan')
                 ]);
-                session()->setFlashdata('success', 'Proses tambah data berhasil.');
-                return redirect()->to('/keuangan');
+                $data = ['type' => 'success', 'msg' => 'Data berhasi disimpan'];
+                echo json_encode($data);
             }else{
                 $this->keuangan->update($id, [
                     "pemasukan" => $this->request->getPost('pemasukan'),
@@ -62,37 +69,18 @@ class Keuangan extends BaseController
                     "tgl_keluar" => $this->request->getPost('tgl_keluar'),
                     "keterangan" => $this->request->getPost('keterangan'),
                 ]);
-                session()->setFlashdata('success', 'Proses edit data berhasil.');
-                return redirect()->to('/keuangan');
+                $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasi diupdate'];
+                echo json_encode($data);
             }
         }
     }
 
     function delete($id){
-        $this->keuangan->delete($id);
-        return redirect('keuangan')->with('success','Data Berhasil di Delete');
+        $data = $this->keuangan->delete($id);
+        if($data){
+            $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasil di hapus'];
+        echo json_encode($data);
+        }
     }
     
-    public function edits($id)
-    {
-        $keuangan = new KeuanganModel();
-        $data['keuangan'] = $keuangan->where('id', $id)->first();
-        $validation =  \Config\Services::validation();
-        $validation->setRules([
-            'id' => 'required',
-            'pemasukan' => 'required'
-        ]);
-        $isDataValid = $validation->withRequest($this->request)->run();
-        if($isDataValid){
-            $this->keuangan->update($id, [
-                "pemasukan" => $this->request->getPost('pemasukan'),
-                "pengeluaran" => $this->request->getPost('pengeluaran'),
-                "tgl_masuk" => $this->request->getPost('tgl_masuk'),
-                "tgl_keluar" => $this->request->getPost('tgl_keluar'),
-                "keterangan" => $this->request->getPost('keterangan'),
-            ]);
-            return redirect()->to('/keuangan');
-        }
-        return view('keuangan/edit', $data);
-    }
 }
