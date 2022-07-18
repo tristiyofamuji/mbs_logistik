@@ -35,6 +35,7 @@
 	<!-- ================== END page-js ================== -->
 
 	<!-- required js -->
+	<script src="<?= base_url() ?>/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script src="<?= base_url() ?>/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -85,6 +86,21 @@
 		{ extend: 'csv', className: 'btn btn-default' } */
 		]
 	});
-	</script>
+	
+	window.setTimeout(function() { 
+		$(".alert-warning").fadeTo(500, 0).slideUp(500,
+		function(){ 
+			$(this).remove(); 
+		}); 
+	}, 2000);
+	
+	window.setTimeout(function() { 
+		$(".alert-success").fadeTo(500, 0).slideUp(500,
+		function(){ 
+			$(this).remove(); 
+		}); 
+	}, 5000);
+    </script>
 	</body>
+	
 </html>

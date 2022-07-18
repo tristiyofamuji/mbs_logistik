@@ -7,5 +7,5 @@ use CodeIgniter\Model;
 class KeuanganModel extends Model
 {
     protected $table = "t_keuangan";
-    protected $allowedFields = ['pemasukan', 'pengeluaran', 'tgl_masuk','tgl_keluar','keterangan'];
+    protected $allowedFields = ['id','pemasukan', 'pengeluaran', 'tgl_masuk','tgl_keluar','keterangan'];
 }
