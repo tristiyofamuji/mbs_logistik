@@ -1,34 +1,32 @@
 <div class="row">
 	<div class="form-group col-sm-12">
-		<label class="col-sm-6 control-label">Uang Masuk</label>
+		<label class="col-sm-6 control-label">Nama Sopir</label>
 		<div class="col-sm-12">
-			<input type="text" id="pemasukan" name="pemasukan" placeholder="Pemasukan" 
-				class="form-control" value="<?=$keuangan['pemasukan']?>" required>
+			<input type="text" id="nama" name="nama" value="<?= $sopir['nama'] ?>" placeholder="Nama Sopir" class="form-control" required>
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
-		<label class="col-sm-6 control-label">Uang Keluar</label>
+		<label class="col-sm-6 control-label">No. Telepon</label>
 		<div class="col-sm-12">
-			<input id="pengeluaran" name="pengeluaran" placeholder="Pengeluaran"
-				class="form-control" value="<?=$keuangan['pengeluaran']?>">
+			<input id="telepon" name="telepon" placeholder="No. Telepon" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
-		<label class="col-sm-6">Tanggal Masuk</label>
+		<label class="col-sm-6 control-label">No. Whatsapp</label>
 		<div class="col-sm-12">
-			<input type="date" class="form-control" name="tgl_masuk" value="<?= substr($keuangan['tgl_masuk'],0,10) ?>" placeholder="dd/mm/yyyy" /></div>
+			<input id="no_whatsapp" name="no_whatsapp" placeholder="No. Whatsapp" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
-		<label class="col-sm-6">Tanggal Keluar</label>
+		<label class="col-sm-6 control-label">No. Kendaraan</label>
 		<div class="col-sm-12">
-			<input type="date" class="form-control" name="tgl_keluar" value="<?= substr($keuangan['tgl_keluar'],0,10) ?>" placeholder="dd/mm/yyyy" /></div>
+			<input id="no_kendaraan" name="no_kendaraan" placeholder="No. Kendaraan" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
-		<label class="col-sm-6 control-label">Keterangan</label>
+		<label class="col-sm-6 control-label">Alamat</label>
 		<div class="col-sm-12">
-			<textarea id="keterangan" name="keterangan" type="text" placeholder="Keterangan" class="form-control" value="<?=$keuangan['keterangan']?>"><?=$keuangan['keterangan']?></textarea>
+			<input id="alamat" name="alamat" placeholder="Alamat" class="form-control">
 		</div>
 	</div>
 </div>

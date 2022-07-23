@@ -50,6 +50,7 @@ $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
 $routes->get('/home', 'Home::index');
+//Keuangan
 $routes->get('/keuangan', 'Keuangan::index');
 $routes->add('/keuangan/tambah', 'Keuangan::tambah');
 $routes->add('/keuangan/save', 'Keuangan::save');
@@ -70,9 +71,15 @@ $routes->get('/jualbelitruck', 'Jualbelitruck::index');
 $routes->get('/pajakdansim', 'Pajakdansim::index');
 $routes->get('/company', 'Company::index');
 $routes->get('/helper', 'Helper::index');
+//Sopir
 $routes->get('/sopir', 'Sopir::index');
-$routes->get('/sopir/tambah', 'Sopir::tambah');
-$routes->get('/keuangan/datagrid', 'Keuangan::datagrid');
+$routes->add('/sopir/datagrid/(:segment)', 'Sopir::datagrid/$1');
+$routes->add('/sopir/tambah', 'Sopir::tambah');
+$routes->add('/sopir/save', 'Sopir::save');
+$routes->add('/sopir/save/(:any)', 'Sopir::save/$1');
+$routes->add('/sopir/edit/(:any)', 'Sopir::edit/$1');
+$routes->add('/sopir/delete/(:segment)', 'Sopir::delete/$1');
+$routes->add('/sopir/datagrid/(:segment)', 'Sopir::datagrid/$1');
 
 
 /*

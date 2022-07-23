@@ -162,7 +162,7 @@
 						}
 						xhr = $.ajax({
 						type: 'POST',
-						url: '<?= base_url("keuangan/edit/")?>/'+ id,
+						url: '<?= base_url("sopir/edit/")?>/'+ id,
 						dataType: 'json',
 						success: function (data) {	
 								$('#modal_content').html(data);
@@ -182,7 +182,7 @@
 				function remove(id) {
 					$.ajax({
 						type: 'POST',
-						url: '<?= base_url("keuangan/delete/") ?>/' + id,
+						url: '<?= base_url("sopir/delete/") ?>/' + id,
 						dataType: 'json',
 						success: function (data) {
 							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
