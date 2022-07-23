@@ -70,6 +70,10 @@ $routes->get('/jualbelitruck', 'Jualbelitruck::index');
 $routes->get('/pajakdansim', 'Pajakdansim::index');
 $routes->get('/company', 'Company::index');
 $routes->get('/helper', 'Helper::index');
+$routes->get('/sopir', 'Sopir::index');
+$routes->get('/sopir/tambah', 'Sopir::tambah');
+$routes->get('/keuangan/datagrid', 'Keuangan::datagrid');
+
 
 /*
  * --------------------------------------------------------------------

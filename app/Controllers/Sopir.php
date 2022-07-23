@@ -1,25 +1,25 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\KeuanganModel;
+use App\Models\SopirModel;
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class Keuangan extends BaseController
+class Sopir extends BaseController
 {
-    // protected $keuangan;
+    protected $sopir;
  
     function __construct()
     {
-        $this->keuangan = new KeuanganModel();
+        $this->sopir = new SopirModel();
         $this->users = new UsersModel();
     }
 
     public function index(){
         $data = [
-            'title' => 'Keuangan',
-            'konten' => 'keuangan/index',
+            'title' => 'Data Sopir',
+            'konten' => 'sopir/index',
             'user' => $this->users->first()
         ];
         return view('layout/app', $data);
@@ -28,24 +28,21 @@ class Keuangan extends BaseController
     public function datagrid()
     {
         $data = [
-            'title' => 'Keuangan',
-            'user' => $this->users->first()
+            'sopir' => $this->sopir->orderBy('nama','ASC')->findAll()
         ];
-
-        $data['keuangan'] = $this->keuangan->orderBy('id','DESC')->findAll();
-        /* var_dump($this->keuangan->orderBy('id','DESC')->findAll());die(); */
-        $view = view('keuangan/grid', $data);
+        
+        $view = view('sopir/grid', $data);
         echo json_encode(['tabel' => $view]);
     }
 
     public function tambah(){
-        return view('keuangan/tambah');
+        return view('sopir/tambah');
     }
 
     public function edit($id)
     {
-        $data['keuangan'] = $this->keuangan->where('id', $id)->first();
-        $view = view('keuangan/edit', $data);
+        $data['sopir'] = $this->sopir->where('id', $id)->first();
+        $view = view('sopir/edit', $data);
         echo json_encode($view);
     }
 
@@ -56,31 +53,31 @@ class Keuangan extends BaseController
         if($isDataValid){
             
             if($id == ""){
-                $this->keuangan->insert([
+                $this->sopir->insert([
                     "pemasukan" => $this->request->getPost('pemasukan'),
                     "pengeluaran" => $this->request->getPost('pengeluaran'),
                     "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
                     "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
                     "keterangan" => $this->request->getPost('keterangan')
                 ]);
-                $data = ['type' => 'success', 'msg' => 'Data berhasi disimpan'];
+                $data = ['type' => 'success', 'msg' => 'Data berhasil disimpan'];
                 echo json_encode($data);
             }else{
-                $this->keuangan->update($id, [
+                $this->sopir->update($id, [
                     "pemasukan" => $this->request->getPost('pemasukan'),
                     "pengeluaran" => $this->request->getPost('pengeluaran'),
                     "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
                     "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
                     "keterangan" => $this->request->getPost('keterangan'),
                 ]);
-                $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasi diupdate'];
+                $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasil diupdate'];
                 echo json_encode($data);
             }
         }
     }
 
     function delete($id){
-        $data = $this->keuangan->delete($id);
+        $data = $this->sopir->delete($id);
         if($data){
             $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasil di hapus'];
         echo json_encode($data);

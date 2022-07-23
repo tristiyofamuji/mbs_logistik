@@ -101,6 +101,12 @@
 		}); 
 	}, 5000);
     </script>
+	<!-- script -->
+	<script>
+		$('#datepicker').datepicker({
+			autoclose: true
+		});
+	</script>
 	</body>
 	
 </html>

@@ -5,7 +5,11 @@ use App\Models\UsersModel;
 
 class Order extends BaseController
 {
-    public function index()
+    function __construct()
+    {
+        $this->users = new UsersModel();
+    }
+    /* public function index()
     {
         $users =  new UsersModel();
         $data = [
@@ -16,6 +20,15 @@ class Order extends BaseController
               . view('layout/menu', $data)
               . view('order/index')
               . view('layout/footer');
+    } */
+
+    public function index(){
+        $data = [
+            'title' => 'Order',
+            'konten' => 'order/index',
+            'user' => $this->users->first()
+        ];
+        return view('layout/app', $data);
     }
 
     function tambah(){

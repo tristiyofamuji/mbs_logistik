@@ -173,6 +173,12 @@
 							<span class="menu-text">Mencari Order</span>
 						</a>
 					</div>
+					<div class="menu-item <?php if($title == 'Data Sopir'){ echo 'active'; } ?>">
+						<a href="<?= base_url('/sopir') ?>" class="menu-link">
+							<span class="menu-icon"><i class="fas fa-truck"></i></span>
+							<span class="menu-text">Data Sopir</span>
+						</a>
+					</div>
 					<div class="menu-item <?php if($title == 'Bagi Hasil Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/bagihasilsopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-truck"></i></span>

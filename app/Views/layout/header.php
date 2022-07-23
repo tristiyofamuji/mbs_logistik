@@ -24,7 +24,10 @@
 	<link href="<?= base_url() ?>/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
-
-
+	<style>
+		td{
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
