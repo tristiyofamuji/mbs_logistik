@@ -14,13 +14,13 @@
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6">Tanggal Masuk</label>
 		<div class="col-sm-12">
-			<input type="date" class="form-control" name="tgl_masuk" placeholder="dd/mm/yyyy" />											</div>
+			<input type="date" class="form-control" name="tgl_masuk" placeholder="dd/mm/yyyy" />
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6">Tanggal Keluar</label>
 		<div class="col-sm-12">
-			<input type="date" class="form-control" name="tgl_keluar" placeholder="dd/mm/yyyy" />											</div>
+			<input type="date" class="form-control" name="tgl_keluar" placeholder="dd/mm/yyyy" />
 		</div>
 	</div>
 	<div class="form-group col-sm-12">

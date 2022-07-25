@@ -81,6 +81,7 @@
 		responsive: true,
         ordering: true,
 		searching: true,
+		info: false,
 		buttons: [ 
 		/* { extend: 'print', className: 'btn btn-default' },
 		{ extend: 'csv', className: 'btn btn-default' } */

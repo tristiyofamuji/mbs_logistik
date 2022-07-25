@@ -96,11 +96,6 @@
 									</tr>
 								</thead>
 								<tbody id="tbody" class="animated table_content">
-									<tr>
-										<td colspan="5"><i id="spinner" class="fa fa-spinner"></i> &nbsp; Loading.. Mohon
-											tunggu.
-										</td>
-									</tr>
 								</tbody>
 							</table>
 						</div>

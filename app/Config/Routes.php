@@ -71,6 +71,7 @@ $routes->get('/jualbelitruck', 'Jualbelitruck::index');
 $routes->get('/pajakdansim', 'Pajakdansim::index');
 $routes->get('/company', 'Company::index');
 $routes->get('/helper', 'Helper::index');
+
 //Sopir
 $routes->get('/sopir', 'Sopir::index');
 $routes->add('/sopir/datagrid/(:segment)', 'Sopir::datagrid/$1');
@@ -80,6 +81,16 @@ $routes->add('/sopir/save/(:any)', 'Sopir::save/$1');
 $routes->add('/sopir/edit/(:any)', 'Sopir::edit/$1');
 $routes->add('/sopir/delete/(:segment)', 'Sopir::delete/$1');
 $routes->add('/sopir/datagrid/(:segment)', 'Sopir::datagrid/$1');
+
+//Company
+$routes->get('/company', 'Company::index');
+$routes->add('/company/datagrid/(:segment)', 'Company::datagrid/$1');
+$routes->add('/company/tambah', 'Company::tambah');
+$routes->add('/company/save', 'Company::save');
+$routes->add('/company/save/(:any)', 'Company::save/$1');
+$routes->add('/company/edit/(:any)', 'Company::edit/$1');
+$routes->add('/company/delete/(:segment)', 'Company::delete/$1');
+$routes->add('/company/datagrid/(:segment)', 'Company::datagrid/$1');
 
 
 /*

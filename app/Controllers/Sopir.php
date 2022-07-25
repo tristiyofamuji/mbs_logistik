@@ -27,8 +27,9 @@ class Sopir extends BaseController
 
     public function datagrid()
     {
+        $id_pemilik = session('LT@id');
         $data = [
-            'sopir' => $this->sopir->orderBy('nama','ASC')->findAll()
+            'sopir' => $this->sopir->where('id_pemilik',$id_pemilik)->orderBy('nama','ASC')->findAll()
         ];
         
         $view = view('sopir/grid', $data);
@@ -47,28 +48,31 @@ class Sopir extends BaseController
     }
 
     public function save($id = ""){
+        $id_pemilik = session('LT@id');
         $validation =  \Config\Services::validation();
-        $validation->setRules(['pemasukan' => 'required']);
+        $validation->setRules(['nama' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
         if($isDataValid){
             
             if($id == ""){
                 $this->sopir->insert([
-                    "pemasukan" => $this->request->getPost('pemasukan'),
-                    "pengeluaran" => $this->request->getPost('pengeluaran'),
-                    "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
-                    "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
-                    "keterangan" => $this->request->getPost('keterangan')
+                    "nama" => $this->request->getPost('nama'),
+                    'id_pemilik' => $id_pemilik,
+                    "telepon" => $this->request->getPost('telepon'),
+                    "no_whatsapp" => $this->request->getPost('no_whatsapp'),
+                    "no_kendaraan" => $this->request->getPost('no_kendaraan'),
+                    "alamat" => $this->request->getPost('alamat')
                 ]);
                 $data = ['type' => 'success', 'msg' => 'Data berhasil disimpan'];
                 echo json_encode($data);
             }else{
                 $this->sopir->update($id, [
-                    "pemasukan" => $this->request->getPost('pemasukan'),
-                    "pengeluaran" => $this->request->getPost('pengeluaran'),
-                    "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
-                    "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
-                    "keterangan" => $this->request->getPost('keterangan'),
+                    "nama" => $this->request->getPost('nama'),
+                    'id_pemilik' => $id_pemilik,
+                    "telepon" => $this->request->getPost('telepon'),
+                    "no_whatsapp" => $this->request->getPost('no_whatsapp'),
+                    "no_kendaraan" => $this->request->getPost('no_kendaraan'),
+                    "alamat" => $this->request->getPost('alamat')
                 ]);
                 $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasil diupdate'];
                 echo json_encode($data);

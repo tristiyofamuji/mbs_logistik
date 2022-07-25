@@ -8,25 +8,25 @@
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">No. Telepon</label>
 		<div class="col-sm-12">
-			<input id="telepon" name="telepon" placeholder="No. Telepon" class="form-control">
+			<input id="telepon" name="telepon" placeholder="No. Telepon" value="<?= $sopir['telepon'] ?>" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">No. Whatsapp</label>
 		<div class="col-sm-12">
-			<input id="no_whatsapp" name="no_whatsapp" placeholder="No. Whatsapp" class="form-control">
+			<input id="no_whatsapp" name="no_whatsapp" placeholder="No. Whatsapp" value="<?= $sopir['no_whatsapp'] ?>" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">No. Kendaraan</label>
 		<div class="col-sm-12">
-			<input id="no_kendaraan" name="no_kendaraan" placeholder="No. Kendaraan" class="form-control">
+			<input id="no_kendaraan" name="no_kendaraan" placeholder="No. Kendaraan" value="<?= $sopir['no_kendaraan'] ?>" class="form-control">
 		</div>
 	</div>
 	<div class="form-group col-sm-12">
 		<label class="col-sm-6 control-label">Alamat</label>
 		<div class="col-sm-12">
-			<input id="alamat" name="alamat" placeholder="Alamat" class="form-control">
+			<input id="alamat" name="alamat" placeholder="Alamat" value="<?= $sopir['alamat'] ?>" class="form-control">
 		</div>
 	</div>
 </div>

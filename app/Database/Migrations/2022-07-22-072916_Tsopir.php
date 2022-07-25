@@ -14,6 +14,10 @@ class Tsopir extends Migration
 				'constraint' => '11',
         		'auto_increment' => true,
 			],
+			'id_pemilik' => [
+				'type' => 'INT',
+				'constraint' => '11',
+			],
 			'nama' => [
 				'type' => 'VARCHAR',
 				'constraint' => '100',

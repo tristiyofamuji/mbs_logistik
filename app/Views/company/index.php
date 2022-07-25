@@ -28,44 +28,25 @@
 				<div class="mt-md-0 mt-2"><a href="#" id="toolbar_tambah" data-target="modal_tambah" data-toggle="modal" class="text-white text-opacity-75 text-decoration-none" data-original-title="Tambah"><i class="fa fa-lg fa-fw me-2 fa-plus text-theme"></i>Tambah</a></div>
 				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_edit" class="text-white text-opacity-75 text-decoration-none" data-toggle="modal" data-original-title="Edit"><i class="fa fa-lg fa-fw me-2 fa-edit text-theme"></i>Edit</a></div>
 				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_delete" data-bs-target="#ModalDelete" class="text-white text-opacity-75 text-decoration-none" data-bs-toggle="modal" data-original-title="Remove"><i class="fa fa-lg fa-fw me-2 fa-remove text-theme"></i>Delete</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-download fa-fw me-1 text-theme"></i> Export</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2 dropdown-toggle">
-					<a href="#" data-bs-toggle="dropdown" class="text-white text-opacity-75 text-decoration-none">More Actions</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-						<div role="separator" class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Separated link</a>
-					</div>
-				</div>
 			</div>
-			
-			<div class="card">
-				<div class="card-body">
-						<!-- BEGIN table -->
-						<div class="table-responsive">
-							<table id="datatableDefault" class="table text-nowrap w-100" data-toggle="table" data-search="true">
-								<thead>
-									<tr>
-										<!-- <th class="border-top-0 pt-0 pb-2"></th> -->
-										<th class="border-top-0 pt-0 pb-2">Nama Sopir</th>
-										<th class="border-top-0 pt-0 pb-2">Telepon</th>
-										<th class="border-top-0 pt-0 pb-2">No. Whatsapp</th>
-										<th class="border-top-0 pt-0 pb-2">Alamat</th>
-										<th class="border-top-0 pt-0 pb-2">No. Kendaraan</th>
-									</tr>
-								</thead>
-								<tbody id="tbody" class="animated table_content">
-									<tr id="kolom0" onclick="action('0')" class="">
-										<td colspan="5"><i id="spinner" class="fa fa-spinner"></i> &nbsp; Loading.. Mohon
-											tunggu.
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- END table -->									
+			<div id="datatable" class="mb-5">
+				<div class="card">
+					<div class="card-body">
+						<table id="datatableDefault" class="table text-nowrap w-100">
+							<thead>
+								<tr>
+									<th class="border-top-0 pt-0 pb-2">Nama Usaha</th>
+									<th class="border-top-0 pt-0 pb-2">No. Telepon</th>
+									<th class="border-top-0 pt-0 pb-2">Email</th>
+									<th class="border-top-0 pt-0 pb-2">Alamat</th>
+									<th class="border-top-0 pt-0 pb-2">NPWP</th>
+									<th class="border-top-0 pt-0 pb-2">No. SK</th>
+									<th class="border-top-0 pt-0 pb-2">keterangan</th>
+								</tr>
+							</thead>
+							<tbody class="animated table_content">
+							</tbody>
+						</table>
 					</div>
 					<div class="card-arrow">
 						<div class="card-arrow-top-left"></div>
@@ -75,9 +56,10 @@
 					</div>
 				</div>
 			</div>
+			<!-- END table -->
 		</div>
 		<!-- END #content -->
-			<div class="modal fade main_modal" id="modalSopir" tabindex="-1" data-width="760" aria-hidden="true" style="display: none;">
+			<div class="modal fade main_modal" tabindex="-1" data-width="760" style="display: none;">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -97,14 +79,16 @@
 				function save(id = "") {
 					$.ajax({
 						type: 'POST',
-						url: '<?= base_url("sopir/save/") ?>/' + id,
+						url: '<?= base_url("company/save/") ?>/' + id,
 						dataType: 'json',
 						data: {
-							nama: $('input[name="nama"]').val(),
+							nama_usaha: $('input[name="nama_usaha"]').val(),
 							telepon: $('input[name="telepon"]').val(),
-							no_whatsapp: $('input[name="no_whatsapp"]').val(),
-							no_kendaraan: $('input[name="no_kendaraan"]').val(),
+							email: $('input[name="email"]').val(),
+							npwp: $('input[name="npwp"]').val(),
 							alamat: $('input[name="alamat"]').val(),
+							no_sk: $('input[name="no_sk"]').val(),
+							keterangan: $('input[name="keterangan"]').val(),
 						},
 						success: function (data) {
 							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
@@ -122,7 +106,7 @@
 						}
 						xhr = $.ajax({
 							type: 'POST',
-							url: '<?= base_url("sopir/tambah/")?>',
+							url: '<?= base_url("company/tambah/")?>',
 							datatype: 'json',
 							success: function (data) {
 								setTimeout(function () {
@@ -162,7 +146,7 @@
 						}
 						xhr = $.ajax({
 						type: 'POST',
-						url: '<?= base_url("sopir/edit/")?>/'+ id,
+						url: '<?= base_url("company/edit/")?>/'+ id,
 						dataType: 'json',
 						success: function (data) {	
 								$('#modal_content').html(data);
@@ -177,16 +161,12 @@
 						});		
 					});
 					$('.main_modal').modal('show');
-					/* $('#modalSopir').modal({
-			    		backdrop: 'static',
-			    		keyboard: false
-					}); */
 				}	
 
 				function remove(id) {
 					$.ajax({
 						type: 'POST',
-						url: '<?= base_url("sopir/delete/") ?>/' + id,
+						url: '<?= base_url("company/delete/") ?>/' + id,
 						dataType: 'json',
 						success: function (data) {
 							var pageno = $('.paginate_active a').data('ci-pagination-page') - 1;
@@ -200,7 +180,7 @@
 				function load_data(pageno) {
 				$.ajax({
 					type: 'POST',
-					url: '<?= base_url("sopir/datagrid/")?>/' + pageno,
+					url: '<?= base_url("company/datagrid/")?>/' + pageno,
 					dataType: 'json',
 					success: function (data) {
 						// console.log(data);
@@ -218,7 +198,7 @@
 						e.preventDefault();
 						var pageno = $(this).attr('data-ci-pagination-page');
 						$.ajax({
-							url: '<?= base_url("sopir/datagrid/")?>' + pageno,
+							url: '<?= base_url("company/datagrid/")?>' + pageno,
 							type: 'get',
 							dataType: 'json',
 							success: function (data) {
@@ -240,9 +220,10 @@
 					});
 				});
 			</script>
-			<script>
+				<script>
 				jQuery(document).ready(function () {
 					Main.init();
 					Index.init();
 				});
+
 			</script>

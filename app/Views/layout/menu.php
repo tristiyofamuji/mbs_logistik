@@ -229,7 +229,7 @@
 					</div>
 					<div class="menu-divider"></div>
 					<div class="menu-header">Users</div>
-					<div class="menu-item <?php if($title == 'Setting'){ echo 'active'; } ?>">
+					<div class="menu-item <?php if($title == 'Profil Usaha'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/company') ?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gear"></i></span>
 							<span class="menu-text">Profil Usaha</span>
