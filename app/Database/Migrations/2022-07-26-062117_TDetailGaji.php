@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Gaji extends Migration
+class TDetailGaji extends Migration
 {
     public function up()
     {
@@ -14,13 +14,17 @@ class Gaji extends Migration
 				'constraint'     => '11',
         		'auto_increment' => true,
 			],
-			'id_sopir'          => [
+			'id_gaji'          => [
 				'type'           => 'INT',
 				'constraint'     => '11',
 			],
-			'periode' => [
-                'type'  => 'DATE',
-				'null'       	 => true,
+			'kode'          => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '20',
+			],
+			'nominal' => [
+				'type'           => 'INT',
+				'constraint'     => '11',
             ],
             'keterangan' => [
                 'type'  => 'VARCHAR',
@@ -29,11 +33,11 @@ class Gaji extends Migration
  
 		]);
 		$this->forge->addPrimaryKey('id', true);
-		$this->forge->createTable('t_gaji');
+		$this->forge->createTable('t_detaiL_gaji');
     }
 
     public function down()
     {
-        $this->forge->dropTable('t_gaji');
+        $this->forge->dropTable('t_detaiL_gaji');
     }
 }

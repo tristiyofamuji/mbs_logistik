@@ -92,6 +92,18 @@ $routes->add('/company/edit/(:any)', 'Company::edit/$1');
 $routes->add('/company/delete/(:segment)', 'Company::delete/$1');
 $routes->add('/company/datagrid/(:segment)', 'Company::datagrid/$1');
 
+//Gaji Sopir
+$routes->get('/gajisopir', 'Gajisopir::index');
+$routes->add('/gajisopir/datagrid/(:segment)', 'Gajisopir::datagrid/$1');
+$routes->add('/gajisopir/tambah', 'Gajisopir::tambah');
+$routes->add('/gajisopir/save', 'Gajisopir::save');
+$routes->add('/gajisopir/save/(:any)', 'Gajisopir::save/$1');
+$routes->add('/gajisopir/save_detail', 'Gajisopir::save_detail');
+$routes->add('/gajisopir/save_detail/(:any)', 'Gajisopir::save_detail/$1');
+$routes->add('/gajisopir/edit/(:any)', 'Gajisopir::edit/$1');
+$routes->add('/gajisopir/tambah_slip/(:any)', 'Gajisopir::tambah_slip/$1');
+$routes->add('/gajisopir/delete/(:segment)', 'Gajisopir::delete/$1');
+$routes->add('/gajisopir/detail_slip/(:segment)', 'Gajisopir::detail_slip/$1');
 
 /*
  * --------------------------------------------------------------------

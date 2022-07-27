@@ -28,17 +28,6 @@
 				<div class="mt-md-0 mt-2"><a href="#" id="toolbar_tambah" data-target="modal_tambah" data-toggle="modal" class="text-white text-opacity-75 text-decoration-none" data-original-title="Tambah"><i class="fa fa-lg fa-fw me-2 fa-plus text-theme"></i>Tambah</a></div>
 				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_edit" class="text-white text-opacity-75 text-decoration-none" data-toggle="modal" data-original-title="Edit"><i class="fa fa-lg fa-fw me-2 fa-edit text-theme"></i>Edit</a></div>
 				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" id="toolbar_delete" data-bs-target="#ModalDelete" class="text-white text-opacity-75 text-decoration-none" data-bs-toggle="modal" data-original-title="Remove"><i class="fa fa-lg fa-fw me-2 fa-remove text-theme"></i>Delete</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2"><a href="#" class="text-white text-opacity-75 text-decoration-none"><i class="fa fa-download fa-fw me-1 text-theme"></i> Export</a></div>
-				<div class="ms-md-2 mt-md-0 mt-2 dropdown-toggle">
-					<a href="#" data-bs-toggle="dropdown" class="text-white text-opacity-75 text-decoration-none">More Actions</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-						<div role="separator" class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Separated link</a>
-					</div>
-				</div>
 			</div>
 			
 			<div class="card">

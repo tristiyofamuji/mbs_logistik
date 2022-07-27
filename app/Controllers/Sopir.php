@@ -52,6 +52,21 @@ class Sopir extends BaseController
         $validation =  \Config\Services::validation();
         $validation->setRules(['nama' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
+        $whatsapp = $this->request->getPost('no_whatsapp');
+
+        /* if(substr($whatsapp,0,4) == '+628'){
+			$wa = '628'.substr($whatsapp,4);
+		}else{
+			$tlp = substr($whatsapp,0,2);
+			if($tlp == '08'){
+				$wa = '628'.substr($whatsapp,2);
+			}
+			else{
+				$telepon = $whatsapp;
+				$wa = $a->phone;
+			}
+		} */
+
         if($isDataValid){
             
             if($id == ""){
