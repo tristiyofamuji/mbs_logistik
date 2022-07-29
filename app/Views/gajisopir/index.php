@@ -83,7 +83,8 @@
 			url: '<?= base_url("gajisopir/save/") ?>/' + id,
 			dataType: 'json',
 			data: {
-				id_sopir: $('input[name="id_sopir"]').val(),
+				/* id_sopir: $('input[name="id_sopir"]').val(), */
+				id_sopir:$('id_sopir').val(),
 				periode: $('input[name="periode"]').val(),
 				keterangan: $('input[name="keterangan"]').val(),
 			},
@@ -93,6 +94,7 @@
 				$('.main_modal').modal('hide');		
 			}
 		});		
+			console.log('my message' + periode);
 	}
 
 	function save_detail(id = "") {

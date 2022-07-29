@@ -71,8 +71,6 @@ class Gajisopir extends BaseController
         $validation =  \Config\Services::validation();
         $validation->setRules(['periode' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
-        /* $whatever = $this->request->getVar();
-        $result = $whatever['id_sopir']; */
         var_dump($this->request->getPost('id_sopir'));die;
         if($isDataValid){
             

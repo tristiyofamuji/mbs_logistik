@@ -11,9 +11,10 @@ class SopirModel extends Model
 
     public function getGaji()
     {
-        $query =  $this->db->table('t_gaji')
-        ->join('t_sopir', 't_gaji.id_sopir = t_sopir.id')
-         ->orderBy('periode', 'DESC')
+        $query =  $this->db->table('t_gaji a')
+        ->join('t_sopir b', 'a.id_sopir = b.id')
+        ->select('a.*,b.nama,b.no_kendaraan,b.alamat')
+         ->orderBy('a.periode', 'DESC')
          ->get()->getResultArray(); 
         return $query;
     }
@@ -30,9 +31,10 @@ class SopirModel extends Model
 
     public function editGaji($id)
     {
-        $query =  $this->db->table('t_gaji')
+        $query =  $this->db->table('t_gaji a')
+        ->select('*')
          ->where('id',$id)
-         ->get()->getResultArray(); 
+         ->get()->getResultArray();
         return $query;
     }
 
@@ -43,7 +45,6 @@ class SopirModel extends Model
          ->join('t_gaji', 't_detail_gaji.id_gaji = t_gaji.id')
          ->get()->getResultArray(); 
 
-         var_dump($query);die;
         /* return $query; */
     }
 }

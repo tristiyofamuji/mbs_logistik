@@ -35,7 +35,8 @@ class Pajakdansim extends BaseController
         echo json_encode(['tabel' => $view]);
     }
 
-    function tambah(){
+    function tambah()
+    {
         $data = ['keuangan' => ci_get('t_keuangan')->result()];
         return view('keuangan/tambah',TRUE);
     }
