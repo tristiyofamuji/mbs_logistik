@@ -8,7 +8,7 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Keuangan extends BaseController
 {
-    // protected $keuangan;
+    protected $keuangan;
  
     function __construct()
     {
@@ -33,22 +33,18 @@ class Keuangan extends BaseController
         ];
 
         $data['keuangan'] = $this->keuangan->orderBy('id','DESC')->findAll();
-        /* var_dump($this->keuangan->orderBy('id','DESC')->findAll());die(); */
         $view = view('keuangan/grid', $data);
         echo json_encode(['tabel' => $view]);
     }
-
     public function tambah(){
         return view('keuangan/tambah');
     }
-
     public function edit($id)
     {
         $data['keuangan'] = $this->keuangan->where('id', $id)->first();
         $view = view('keuangan/edit', $data);
         echo json_encode($view);
     }
-
     public function save($id = ""){
         $validation =  \Config\Services::validation();
         $validation->setRules(['pemasukan' => 'required']);
@@ -59,8 +55,8 @@ class Keuangan extends BaseController
                 $this->keuangan->insert([
                     "pemasukan" => $this->request->getPost('pemasukan'),
                     "pengeluaran" => $this->request->getPost('pengeluaran'),
-                    "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
-                    "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
+                    "tgl_masuk" => $this->request->getPost('tgl_masuk'),
+                    "tgl_keluar" => $this->request->getPost('tgl_keluar'),
                     "keterangan" => $this->request->getPost('keterangan')
                 ]);
                 $data = ['type' => 'success', 'msg' => 'Data berhasi disimpan'];
@@ -69,8 +65,8 @@ class Keuangan extends BaseController
                 $this->keuangan->update($id, [
                     "pemasukan" => $this->request->getPost('pemasukan'),
                     "pengeluaran" => $this->request->getPost('pengeluaran'),
-                    "tgl_masuk" => $this->request->getPost('tgl_masuk').' '.date('H:i:s'),
-                    "tgl_keluar" => $this->request->getPost('tgl_keluar').' '.date('H:i:s'),
+                    "tgl_masuk" => $this->request->getPost('tgl_masuk'),
+                    "tgl_keluar" => $this->request->getPost('tgl_keluar'),
                     "keterangan" => $this->request->getPost('keterangan'),
                 ]);
                 $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasi diupdate'];
