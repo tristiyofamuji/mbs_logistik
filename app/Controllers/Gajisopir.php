@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\SopirModel;
+use App\Models\GajisopirModel;
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -13,6 +14,7 @@ class Gajisopir extends BaseController
     {
         $this->sopir = new SopirModel();
         $this->users = new UsersModel();
+        $this->gajisopir = new GajisopirModel();
     }
 
     public function index(){
@@ -71,11 +73,11 @@ class Gajisopir extends BaseController
         $validation =  \Config\Services::validation();
         $validation->setRules(['periode' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
-        var_dump($this->request->getPost('id_sopir'));die;
+        // var_dump($this->request->getPost('periode'));die;
         if($isDataValid){
             
             if($id == ""){
-                $this->sopir->insert([
+                $this->gajisopir->insert([
                     "id_sopir" => $this->request->getPost('id_sopir'),
                     "periode" => $this->request->getPost('periode'),
                     "keterangan" => $this->request->getPost('keterangan')
@@ -84,7 +86,7 @@ class Gajisopir extends BaseController
                 echo json_encode($data);
                 //var_dump($data);die;
             }else{
-                $this->sopir->update($id, [
+                $this->gajisopir->update($id, [
                     "id_sopir" => $this->request->getPost('id_sopir'),
                     "periode" => $this->request->getPost('periode'),
                     "keterangan" => $this->request->getPost('keterangan')

@@ -64,7 +64,6 @@ $routes->get('/profile', 'Profile::index');
 $routes->post('/profile/editData', 'Profile::editData');
 $routes->get('/bagihasilsopir', 'Bagihasil::index');
 $routes->post('/keuangan/store', 'Keuangan::store');
-$routes->get('/gajisopir', 'Gajisopir::index');
 $routes->get('/lacakposisi', 'Lacakposisi::index');
 $routes->get('/mainetenance', 'Maintenancetruck::index');
 $routes->get('/jualbelitruck', 'Jualbelitruck::index');
