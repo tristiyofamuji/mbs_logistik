@@ -185,7 +185,7 @@
 							<span class="menu-text">Bagi Hasil Sopir</span>
 						</a>
 					</div>
-					<div class="menu-item <?php if($title == 'Gaji Sopir'){ echo 'active'; } ?>">
+					<div class="menu-item <?php if($title == 'Data Gaji Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/gajisopir') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-credit-card"></i></span>
 							<span class="menu-text">Gaji Sopir</span>

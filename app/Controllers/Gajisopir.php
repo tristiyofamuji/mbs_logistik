@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\SopirModel;
 use App\Models\GajisopirModel;
+use App\Models\DetailgajiModel;
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -15,6 +16,7 @@ class Gajisopir extends BaseController
         $this->sopir = new SopirModel();
         $this->users = new UsersModel();
         $this->gajisopir = new GajisopirModel();
+        $this->detailgaji = new DetailgajiModel();
     }
 
     public function index(){
@@ -51,7 +53,10 @@ class Gajisopir extends BaseController
     }
     
     public function detail_slip($id){
-        $data['gaji'] = $this->sopir->where('id', $id)->first();
+        $data = [
+            'sopir' => $this->gajisopir->getGaji($id),
+            'gaji' => $this->detailgaji->getGaji($id)
+        ];
         $view = view('gajisopir/detail_slip', $data);
         echo json_encode($view);
     }

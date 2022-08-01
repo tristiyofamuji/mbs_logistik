@@ -49,14 +49,8 @@
 
 <div class="modal fade mt-5" id="modalXl">
   	<div class="modal-dialog modal-xl">
-    	<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Slip Gaji #SOP-22062201</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-			</div>
-			<div id="modal-content" class="modal-body">
-				
-			</div>
+    	<div class="modal-content" id="modal-content">
+			
     	</div>
   	</div>
 </div>
@@ -244,20 +238,20 @@
 	}
 	
 	function load_data(pageno) {
-	$.ajax({
-		type: 'POST',
-		url: '<?= base_url("gajisopir/datagrid/")?>/' + pageno,
-		dataType: 'json',
-		success: function (data) {
-			// console.log(data);
-			if (data.pagination > 12) {
-				$('#pagination').css('margin-right', '5px');
+		$.ajax({
+			type: 'POST',
+			url: '<?= base_url("gajisopir/datagrid/")?>/' + pageno,
+			dataType: 'json',
+			success: function (data) {
+				// console.log(data);
+				if (data.pagination > 12) {
+					$('#pagination').css('margin-right', '5px');
+				}
+				$('#pagination').html(data.pagination);
+				$('.table_content').html(data.tabel);
+				$('.total_data').html('Total : ' + data.total_data + ' Data');
 			}
-			$('#pagination').html(data.pagination);
-			$('.table_content').html(data.tabel);
-			$('.total_data').html('Total : ' + data.total_data + ' Data');
-		}
-	});
+		});
 	}
 	$(document).ready(function () {
 		$('#pagination').on('click', 'a', function (e) {
