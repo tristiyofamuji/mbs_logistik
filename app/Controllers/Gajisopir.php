@@ -124,7 +124,7 @@ class Gajisopir extends BaseController
     }
 
     function delete($id){
-        $data = $this->sopir->delete($id);
+        $data = $this->gajisopir->delete($id);
         if($data){
             $data = ['type' => 'success', 'size' => 'mini', 'text' => 'Data berhasil di hapus'];
         echo json_encode($data);
