@@ -14,7 +14,6 @@
 				<option value="<?= $a['id'] ?>"><?= $a['nama'] ?></option>
 				<?php endforeach; ?>
 			</select>
-			<!-- <input type="text" id="id_sopir" name="id_sopir" placeholder="Periode" value="1" class="form-control"> -->
 		</div>
 	</div>
 	<div class="form-group col-sm-12">

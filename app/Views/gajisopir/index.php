@@ -78,7 +78,6 @@
 			dataType: 'json',
 			data: {
 				id_sopir: $('select[name="id_sopir"]').val(),
-				// id_sopir:$('id_sopir').val(),
 				periode: $('input[name="periode"]').val(),
 				keterangan: $('input[name="keterangan"]').val(),
 				
@@ -218,7 +217,7 @@
 				$('.modal_title').html('Sedang memuat data ..');
 				$('#modal_content').html(loader_2());
 			}
-			});		
+			});
 		});
 		$('#modalXl').modal('show');
 	}

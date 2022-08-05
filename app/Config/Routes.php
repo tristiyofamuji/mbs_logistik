@@ -44,12 +44,14 @@ $routes->get('/', function () {
         return redirect()->to('/home');
     }
 });
+
 $routes->get('/login', 'Login::index');
 $routes->post('/login/auth', 'Login::auth');
 $routes->get('/login/logout', 'Login::logout');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/auth', 'Register::auth');
 $routes->get('/home', 'Home::index');
+
 //Keuangan
 $routes->get('/keuangan', 'Keuangan::index');
 $routes->add('/keuangan/tambah', 'Keuangan::tambah');
@@ -89,7 +91,6 @@ $routes->add('/company/save', 'Company::save');
 $routes->add('/company/save/(:any)', 'Company::save/$1');
 $routes->add('/company/edit/(:any)', 'Company::edit/$1');
 $routes->add('/company/delete/(:segment)', 'Company::delete/$1');
-$routes->add('/company/datagrid/(:segment)', 'Company::datagrid/$1');
 
 //Gaji Sopir
 $routes->get('/gajisopir', 'Gajisopir::index');
@@ -103,6 +104,24 @@ $routes->add('/gajisopir/edit/(:any)', 'Gajisopir::edit/$1');
 $routes->add('/gajisopir/tambah_slip/(:any)', 'Gajisopir::tambah_slip/$1');
 $routes->add('/gajisopir/delete/(:segment)', 'Gajisopir::delete/$1');
 $routes->add('/gajisopir/detail_slip/(:segment)', 'Gajisopir::detail_slip/$1');
+
+//Pajak dan SIM
+$routes->get('/pajakdansim', 'Pajakdansim::index');
+$routes->add('/pajakdansim/datagrid/(:segment)', 'Pajakdansim::datagrid/$1');
+$routes->add('/pajakdansim/tambah', 'Pajakdansim::tambah');
+$routes->add('/pajakdansim/save', 'Pajakdansim::save');
+$routes->add('/pajakdansim/save/(:any)', 'Pajakdansim::save/$1');
+$routes->add('/pajakdansim/edit/(:any)', 'Pajakdansim::edit/$1');
+$routes->add('/pajakdansim/delete/(:segment)', 'Pajakdansim::delete/$1');
+
+//Maintenance Truck
+$routes->get('/maintenance', 'Maintenancetruck::index');
+$routes->add('/maintenance/datagrid/(:segment)', 'Maintenancetruck::datagrid/$1');
+$routes->add('/maintenance/tambah', 'Maintenancetruck::tambah');
+$routes->add('/maintenance/save', 'Maintenancetruck::save');
+$routes->add('/maintenance/save/(:any)', 'Maintenancetruck::save/$1');
+$routes->add('/maintenance/edit/(:any)', 'Maintenancetruck::edit/$1');
+$routes->add('/maintenance/delete/(:segment)', 'Maintenancetruck::delete/$1');
 
 /*
  * --------------------------------------------------------------------
