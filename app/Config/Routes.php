@@ -123,6 +123,14 @@ $routes->add('/maintenance/save/(:any)', 'Maintenancetruck::save/$1');
 $routes->add('/maintenance/edit/(:any)', 'Maintenancetruck::edit/$1');
 $routes->add('/maintenance/delete/(:segment)', 'Maintenancetruck::delete/$1');
 
+//Jual Beli Truck
+$routes->get('/jualbelitruck', 'Jualbelitruck::index');
+$routes->add('/jualbelitruck/datagrid/(:segment)', 'Jualbelitruck::datagrid/$1');
+$routes->add('/jualbelitruck/tambah', 'Jualbelitruck::tambah');
+$routes->add('/jualbelitruck/save', 'Jualbelitruck::save');
+$routes->add('/jualbelitruck/save/(:any)', 'Jualbelitruck::save/$1');
+$routes->add('/jualbelitruck/edit/(:any)', 'Jualbelitruck::edit/$1');
+$routes->add('/jualbelitruck/delete/(:segment)', 'Jualbelitruck::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
