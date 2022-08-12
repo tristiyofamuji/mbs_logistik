@@ -73,7 +73,20 @@ class Filters extends BaseConfig
     public $filters = [
         'isLoggedIn' => ['before' =>
             [
-                'home','keuangan','order','profile','sopir','gajisopir','lacakposisi','bagihasilsopir','maintenance','jualbelitruck','pajakdansim','setting','helper','company'
+                'home',
+                'keuangan',
+                'order',
+                'profile',
+                'sopir',
+                'gajisopir',
+                'lacakposisi',
+                'bagihasilsopir',
+                'maintenance',
+                'jualbelitruck',
+                'pajakdansim',
+                'setting',
+                'helper',
+                'company'
             ],'after' =>
             [
                 'login','register'

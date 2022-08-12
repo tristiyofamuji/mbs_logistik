@@ -131,6 +131,16 @@ $routes->add('/jualbelitruck/save', 'Jualbelitruck::save');
 $routes->add('/jualbelitruck/save/(:any)', 'Jualbelitruck::save/$1');
 $routes->add('/jualbelitruck/edit/(:any)', 'Jualbelitruck::edit/$1');
 $routes->add('/jualbelitruck/delete/(:segment)', 'Jualbelitruck::delete/$1');
+
+//Order
+$routes->get('/order', 'Order::index');
+$routes->add('/order/datagrid/(:segment)', 'Order::datagrid/$1');
+$routes->add('/order/tambah', 'Order::tambah');
+$routes->add('/order/save', 'Order::save');
+$routes->add('/order/save/(:any)', 'Order::save/$1');
+$routes->add('/order/edit/(:any)', 'Order::edit/$1');
+$routes->add('/order/delete/(:segment)', 'Order::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
