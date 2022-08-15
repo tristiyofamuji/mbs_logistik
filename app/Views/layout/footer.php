@@ -80,7 +80,7 @@
 		lengthMenu: [ 10, 20, 30, 40, 50 ],
 		responsive: true,
         ordering: false,
-		searching: true,
+		searching: false,
 		info: false,
 		buttons: [ 
 		/* { extend: 'print', className: 'btn btn-default' },

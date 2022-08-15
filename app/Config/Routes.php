@@ -141,6 +141,15 @@ $routes->add('/order/save/(:any)', 'Order::save/$1');
 $routes->add('/order/edit/(:any)', 'Order::edit/$1');
 $routes->add('/order/delete/(:segment)', 'Order::delete/$1');
 
+//Lacak Posisi Sopir
+$routes->get('/lacakposisi', 'Lacakposisi::index');
+$routes->add('/lacakposisi/datagrid/(:segment)', 'Lacakposisi::datagrid/$1');
+$routes->add('/lacakposisi/tambah', 'Lacakposisi::tambah');
+$routes->add('/lacakposisi/save', 'Lacakposisi::save');
+$routes->add('/lacakposisi/save/(:any)', 'Lacakposisi::save/$1');
+$routes->add('/lacakposisi/edit/(:any)', 'Lacakposisi::edit/$1');
+$routes->add('/lacakposisi/delete/(:segment)', 'Lacakposisi::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

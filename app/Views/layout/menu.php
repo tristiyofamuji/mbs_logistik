@@ -191,10 +191,10 @@
 							<span class="menu-text">Gaji Sopir</span>
 						</a>
 					</div>
-					<div class="menu-item <?php if($title == 'Lacak Posisi Truck'){ echo 'active'; } ?>">
+					<div class="menu-item <?php if($title == 'Lacak Posisi Sopir'){ echo 'active'; } ?>">
 						<a href="<?= base_url('/lacakposisi') ?>" class="menu-link">
 							<span class="menu-icon"><i class="fas fa-map-marker-alt"></i></span>
-							<span class="menu-text">Melacak posisi truck</span>
+							<span class="menu-text">Melacak posisi Sopir</span>
 						</a>
 					</div>
 					<div class="menu-item <?php if($title == 'Maintenance Truck'){ echo 'active'; } ?>">
